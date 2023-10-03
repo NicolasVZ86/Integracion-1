@@ -25,6 +25,7 @@ body {
 }
 
 .pago-carrito {
+    height: 60vh;
     background: var(--second-color);
 }
 
