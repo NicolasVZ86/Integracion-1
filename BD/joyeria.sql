@@ -1,3 +1,8 @@
+CREATE DATABASE bylanpdxjlmrw2ixoud8;
+
+USE bylanpdxjlmrw2ixoud8;
+
+
 CREATE TABLE Usuario (
     ID smallint unsigned auto_increment primary key,
     Nombre varchar(50),
@@ -60,3 +65,6 @@ CREATE TABLE EnvioDetalle (
     Pais varchar(50),
     Ciudad varchar(50)
 );
+
+
+
