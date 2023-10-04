@@ -1,3 +1,18 @@
+:root {
+    --first-color: rgb(113, 201, 206);
+    --first-alpha-color: rgba(113, 201, 206, 0.75);
+
+    --second-color: rgb(166, 227, 233);
+    --second-alpha-color: rgba(166, 227, 233, 0.75);
+
+    --link-color: rgb(17, 106, 123);
+    --link-alpha-color: rgba(17, 106, 123, 0.75);
+
+    --bg-color: rgb(203, 241, 245);
+    --bg-alpha-color: rgba(203, 241, 245, 0.75);
+}
+
+
 /* Estilos para el cuerpo del documento */
 body {
     font-family: Arial, sans-serif;
@@ -5,20 +20,10 @@ body {
     padding: 0;
     display: grid;
     flex-direction: column; /* Alinea los elementos verticalmente */
-    background-color: #A6E3E9;
+    background-color: var(--bg-color);
     min-height: 100vh; /* Establece el alto mínimo del documento */
     grid-template-rows: auto 1fr auto; /* Establece el tamaño de las filas */   
 
-}
-
-
-header {
-    background-color: #71C9CE;
-    color: #fff;
-    padding: 20px;
-    display: flex; /* Usa flexbox para alinear los elementos horizontalmente */
-    justify-content: space-between; /* Espaciado uniforme entre elementos */
-    align-items: center; /* Alinea verticalmente al centro */
 }
 
 .logo img {
@@ -35,7 +40,7 @@ header {
 .login-register a {
     text-decoration: none;
     color: #333;
-    background-color: #fff;
+    background-color: var(--bg-color);
     padding: 10px 20px;
     border-radius: 5px;
 }
@@ -50,7 +55,7 @@ header {
 .login-register a {
     text-decoration: none;
     color: #333;
-    background-color: #fff;
+    background-color: var(--bg-color);
     padding: 10px 20px;
     border-radius: 5px;
 }
@@ -69,7 +74,7 @@ header {
 
 /* Estilo para el botón de búsqueda */
 #search-button {
-    background-color: #007bff; /* Color de fondo del botón (cambia según tu diseño) */
+    background-color: var(--link-color); /* Color de fondo del botón (cambia según tu diseño) */
     color: #fff; /* Color de texto del botón */
     border: none;
     padding: 5px 10px;
@@ -124,7 +129,7 @@ header {
 
         /* Estilos para el footer */
         footer {
-            background-color: rgb(113, 201, 206);
+            background-color: var(--first-color);
             color: white;
             /* padding: 10px 0; Reducir el padding verticalmente */
             display: flex;
@@ -139,7 +144,7 @@ header {
             flex: 1; /* Hacer que los contenedores se expandan para ocupar el espacio disponible */
             margin: 0 10px; /* Agregar margen entre los contenedores */
             margin-left: 20px;
-            background-color:rgb(113, 201, 206);
+            background-color:var(--first-color);
             padding: 15px 20px;
             border-radius: 10px;
             color: #000;

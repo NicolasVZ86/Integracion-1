@@ -1,11 +1,24 @@
-.main{
-    display: flex;
-    margin: 20px;
+:root {
+    --first-color: rgb(113, 201, 206);
+    --first-alpha-color: rgba(113, 201, 206, 0.75);
+
+    --second-color: rgb(166, 227, 233);
+    --second-alpha-color: rgba(166, 227, 233, 0.75);
+
+    --link-color: rgb(17, 106, 123);
+    --link-alpha-color: rgba(17, 106, 123, 0.75);
+
+    --bg-color: rgb(203, 241, 245);
+    --bg-alpha-color: rgba(203, 241, 245, 0.75);
+}
+
+main{
+    background: var(--bg-color);
 }
 
 .aside-container{
     width: 20%;
-    background-color:#A6E3E9;
+    background-color: var(--bg-color);
     height: 400px;
 }
 
