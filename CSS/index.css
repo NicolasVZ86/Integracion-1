@@ -1,0 +1,170 @@
+:root {
+    --first-color: rgb(113, 201, 206);
+    --first-alpha-color: rgba(113, 201, 206, 0.75);
+
+    --second-color: rgb(166, 227, 233);
+    --second-alpha-color: rgba(166, 227, 233, 0.75);
+
+    --link-color: rgb(17, 106, 123);
+    --link-alpha-color: rgba(17, 106, 123, 0.75);
+
+    --bg-color: rgb(203, 241, 245);
+    --bg-alpha-color: rgba(203, 241, 245, 0.75);
+}
+
+
+/* Estilos para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    background-color: var(--bg-color);
+    min-height: 100vh; /* Establece el alto mínimo del documento */
+    grid-template-rows: auto 1fr auto; /* Establece el tamaño de las filas */   
+
+}
+
+.logo img {
+    max-width: 60px; /* Establece el ancho máximo del logotipo */
+    margin-right: 20px; /* Añade un pequeño margen entre el logotipo y el título */
+}
+
+
+.login-register {
+    display: flex;
+    gap: 20px;
+}
+
+.login-register a {
+    text-decoration: none;
+    color: #333;
+    background-color: var(--bg-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Mueve los elementos a la derecha */
+.header-right {
+    margin-left: auto;
+}
+
+
+
+.login-register a {
+    text-decoration: none;
+    color: #333;
+    background-color: var(--bg-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+/* Estilos para la barra de búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    margin-top: 20px; /* Ajusta el espaciado superior según sea necesario */
+}
+
+/* Estilo para el campo de búsqueda */
+#search-input {
+    padding: 4px; /* Espaciado interno para el campo de búsqueda */
+}
+
+/* Estilo para el botón de búsqueda */
+#search-button {
+    background-color: var(--link-color); /* Color de fondo del botón (cambia según tu diseño) */
+    color: #fff; /* Color de texto del botón */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px; /* Añade un margen a la izquierda para separar el botón del enlace del carrito */
+    margin-right:10px ;
+}
+
+/* Estilos para el enlace del carrito */
+.cart-link {
+    text-decoration: none;
+}
+
+.contenedor1 {
+    flex: auto;
+    margin: 10px;
+    padding: 10px;
+}
+
+.product-image-container {
+    background-color: #E3FDFD;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 8px solid #A6E3E9;
+    width: 300px; /* Ancho deseado de la caja de la imagen */
+    height: 300px; /* Altura deseada de la caja de la imagen */
+}
+
+/* Estilo de la imagen dentro de la caja */
+.product-image-container img {
+    width: 60%; /* La imagen ocupa todo el ancho de su contenedor */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+    transition: transform 0.3s; /* Transición para el efecto de zoom */
+}
+
+/* Efecto de zoom al pasar el cursor sobre la imagen */
+.product-image-container:hover img {
+    transform: scale(1.1); /* Ajusta el valor para el zoom deseado */
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    grid-template-rows: repeat(2, 1fr); /* Dos filas de igual tamaño */
+    gap: 20px; /* Espacio entre las imágenes */
+    justify-content: center; /* Alinea las imágenes a la derecha */
+}
+
+
+  
+
+        /* Estilos para el footer */
+        footer {
+            background-color: var(--first-color);
+            color: white;
+            /* padding: 10px 0; Reducir el padding verticalmente */
+            display: flex;
+            justify-content: center; /* Centra horizontalmente el contenido del footer */
+            margin-top: auto; /* Ajusta el margen superior automáticamente */
+        }
+
+        
+
+        /* Estilos para los contenedores dentro del footer */
+        footer .container {
+            flex: 1; /* Hacer que los contenedores se expandan para ocupar el espacio disponible */
+            margin: 0 10px; /* Agregar margen entre los contenedores */
+            margin-left: 20px;
+            background-color:var(--first-color);
+            padding: 15px 20px;
+            border-radius: 10px;
+            color: #000;
+            
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        p{
+            font-size: 17px;
+
+        }
+
+        a:hover {
+            color:#00dbf3 !important;   
+        }
+        
+        i {
+            font-size: 25px;
+        }
