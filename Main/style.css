@@ -12,6 +12,12 @@ li{
 
 a{
     text-decoration: none;
+    color: white;
+
+}
+
+body{
+    background-color: rgb(29, 86, 89);
 }
 
 
@@ -36,6 +42,7 @@ body{
 
 .contenedor{
     background-color: rgb(48, 116, 127);
+    margin-top: 5em;
 }
 
 .container{
@@ -136,6 +143,10 @@ ul{
     background-color: rgb(5, 93, 107);
 }
 
+.barra{
+    width: 400px;
+}
+
 
 .card{
     box-shadow: 0 3px 5px rgba(0 0 0 / .5);
@@ -155,7 +166,7 @@ ul{
 
 .servicios{
     background-color: lightblue;
-    margin: 0 auto;
+    margin-top: 10em;
 }
 
 .servicios_container{
@@ -220,6 +231,15 @@ ul{
 .about_texts p{
     font-size: 1.2em;
     line-height: 1.5;
+}
+
+footer{
+    background-color: steelblue;
+    padding-block: 2em;
+}
+
+.social{
+    gap: 20px;
 }
 
 @media screen and (max-width: 992px) {
