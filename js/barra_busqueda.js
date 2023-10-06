@@ -1,7 +1,6 @@
 const inputBusqueda = document.getElementById('barraBusqueda'); // Obtener el elemento de entrada de búsqueda
 const descripcionesProductos = document.querySelectorAll('.contenido h3'); // Obtener todas las descripciones de productos
 
-// Agregar un evento de escucha al evento de entrada en la barra de búsqueda
 inputBusqueda.addEventListener('input', function() {
     const valorBusqueda = inputBusqueda.value.toLowerCase().trim(); // Obtener el valor de la barra de búsqueda y convertirlo a minúsculas
 
