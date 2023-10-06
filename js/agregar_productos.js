@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Función para agregar productos al carrito
     function agregarProductoAlCarro(idProducto, nombreProducto, precioProducto) {
-        // Lógica para agregar productos al carro (aquí puedes realizar operaciones con la base de datos)
+        // Lógica para agregar productos al carro 
         console.log('Producto agregado al carro - ID:', idProducto, ', Nombre:', nombreProducto, ', Precio:', precioProducto);
     }
 
@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener('click', function () {
             // Obtener información del producto desde el contenedor
             var contenedorProducto = this.parentNode;
-            var idProducto = contenedorProducto.dataset.id; // Suponiendo que el ID del producto esté almacenado en un atributo de datos
+            var idProducto = contenedorProducto.dataset.id;
             var nombreProducto = contenedorProducto.querySelector('h3').textContent;
-            var precioProducto = parseFloat(contenedorProducto.querySelector('.precio').textContent.replace('$', '')); // Suponiendo que el precio esté en un elemento con la clase .precio
+            var precioProducto = parseFloat(contenedorProducto.querySelector('.precio').textContent.replace('$', '')); 
 
             // Llamar a la función para agregar el producto al carrito
             agregarProductoAlCarro(idProducto, nombreProducto, precioProducto);
