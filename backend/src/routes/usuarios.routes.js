@@ -12,7 +12,7 @@ router.get('/usuarios/:id', getUsuario)
 router.post('/usuarios',createUsuarios )
 //const sql = 'INSERT INTO usuarios SET ?'
 
-router.put('/usuarios', updateUsuarios)
+router.put('/usuarios/:id', updateUsuarios)
 //const sql = 'UPDATE usuarios SET ? WHERE id = ?'
 
 router.delete('/usuarios/:id', deleteUsuarios)
