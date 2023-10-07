@@ -37,6 +37,13 @@ export const deleteUsuarios = async (req, res) => {
 }
 //const sql = 'DELETE FROM usuarios WHERE id = ?'
 
-export const updateUsuarios = (req, res) => res.send('actualizando usuarios')
+export const updateUsuarios = async (req, res) => {
+    const {id} = req.params
+    const { ID, Nombre, Apellido, Correo, Contraseña } = req.body
+    const [rows] = await pool.query('UPDATE Usuario SET ID = ?, Nombre = ?, Apellido = ?, Correo = ?, Contraseña = ? WHERE ID = ?', [ID, Nombre, Apellido, Correo, Contraseña, id])
+    if (rows.affectedRows <= 0) return res.status(404).json({ message: "El usuario no existe" })
+    res.json({ message: "El usuario ha sido actualizado" })
+}
+
 //const sql = 'UPDATE usuarios SET ? WHERE id = ?'
 
