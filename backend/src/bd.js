@@ -3,9 +3,9 @@ import {createPool} from 'mysql2/promise';
 
 // Conexion a la base de datos
 export const pool = createPool({    
-    host: 'localhost',
-    user:  'root',
-    password: 'rootpass',
+    host: 'bylanpdxjlmrw2ixoud8-mysql.services.clever-cloud.com',
+    user:  'uofv0bbpla2jv4cg',
+    password: 'ZCY0AtinSfje5DtFrfDk',
     port: 3306,
-    database: 'joyeria'
+    database: 'bylanpdxjlmrw2ixoud8'
 });
