@@ -1,19 +1,42 @@
-const inputBusqueda = document.getElementById('barraBusqueda'); // Obtener el elemento de entrada de búsqueda
-const descripcionesProductos = document.querySelectorAll('.contenido h3'); // Obtener todas las descripciones de productos
+const express = require('express');
+const mysql = require('mysql');
+const app = express();
 
-inputBusqueda.addEventListener('input', function() {
-    const valorBusqueda = inputBusqueda.value.toLowerCase().trim(); // Obtener el valor de la barra de búsqueda y convertirlo a minúsculas
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  database: 'bylanpdxjlmrw2ixoud8'
+});
 
-    descripcionesProductos.forEach(function(descripcion) {
-        const textoDescripcion = descripcion.textContent.toLowerCase();
+// Establecer la conexión a la base de datos
+connection.connect(err => {
+  if (err) {
+    console.error('Error al conectar a la base de datos: ' + err.stack);
+    return;
+  }
+  console.log('Conexión a la base de datos establecida como ID ' + connection.threadId);
+});
 
-        const producto = descripcion.closest('.producto'); // Encontrar el contenedor del producto
+app.use(express.json());
 
-        // Verificar si el texto de la descripción incluye el valor de búsqueda
-        if (textoDescripcion.includes(valorBusqueda)) {
-            producto.style.display = 'block'; // Mostrar el producto si coincide con la búsqueda
-        } else {
-            producto.style.display = 'none'; // Ocultar el producto si no coincide con la búsqueda
-        }
-    });
+// Ruta para manejar las solicitudes de búsqueda
+app.get('/buscar-producto/:valorBusqueda', (req, res) => {
+  const valorBusqueda = req.params.valorBusqueda.toLowerCase().trim();
+  const query = `SELECT Nombre, Descripcion FROM Productos WHERE Descripcion LIKE '%${valorBusqueda}%'`;
+
+  // Realizar la consulta a la base de datos
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error('Error al realizar la consulta: ' + error.stack);
+      res.status(500).json({ error: 'Error al buscar productos.' });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+// Iniciar el servidor
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor iniciado en el puerto ${PORT}`);
 });
