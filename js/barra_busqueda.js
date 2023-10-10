@@ -1,42 +1,31 @@
-const express = require('express');
-const mysql = require('mysql');
-const app = express();
+document.addEventListener('DOMContentLoaded', () => {
+    const barraBusqueda = document.getElementById('barraBusqueda');
+    const buscarBtn = document.getElementById('buscarBtn');
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'bylanpdxjlmrw2ixoud8'
-});
+    buscarBtn.addEventListener('click', () => {
+        const valorBusqueda = barraBusqueda.value;
+         // Redirige a la página de resultados de búsqueda con el valor de búsqueda como parámetro de consulta
+        window.location.href = `/resultados.html?busqueda=${encodeURIComponent(valorBusqueda)}`;
+        fetch(`http://localhost:3001/buscar-producto/${valorBusqueda}`)
+            .then(response => response.json())
+            .then(resultados => {
+                console.log('Resultados de la búsqueda:', resultados);
+                // Llama a la función para mostrar los resultados
+                mostrarResultados(resultados);
+            })
+            .catch(error => console.error('Error al buscar productos:', error));
+    });
 
-// Establecer la conexión a la base de datos
-connection.connect(err => {
-  if (err) {
-    console.error('Error al conectar a la base de datos: ' + err.stack);
-    return;
-  }
-  console.log('Conexión a la base de datos establecida como ID ' + connection.threadId);
-});
+    function mostrarResultados(resultados) {
+        // Código para mostrar los resultados en la interfaz de usuario
+        // Por ejemplo, podrías crear elementos de DOM para mostrar los resultados en una lista.
+        const resultadosLista = document.getElementById('resultadosLista');
+        resultadosLista.innerHTML = ''; // Limpiar resultados anteriores
 
-app.use(express.json());
-
-// Ruta para manejar las solicitudes de búsqueda
-app.get('/buscar-producto/:valorBusqueda', (req, res) => {
-  const valorBusqueda = req.params.valorBusqueda.toLowerCase().trim();
-  const query = `SELECT Nombre, Descripcion FROM Productos WHERE Descripcion LIKE '%${valorBusqueda}%'`;
-
-  // Realizar la consulta a la base de datos
-  connection.query(query, (error, results) => {
-    if (error) {
-      console.error('Error al realizar la consulta: ' + error.stack);
-      res.status(500).json({ error: 'Error al buscar productos.' });
-      return;
+        resultados.forEach(resultado => {
+            const li = document.createElement('li');
+            li.textContent = `Nombre: ${resultado.Nombre}, Descripción: ${resultado.Descripcion}`;
+            resultadosLista.appendChild(li);
+        });
     }
-    res.json(results);
-  });
-});
-
-// Iniciar el servidor
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor iniciado en el puerto ${PORT}`);
 });
