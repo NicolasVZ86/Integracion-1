@@ -7,5 +7,6 @@ export const pool = createPool({
     user:  'uofv0bbpla2jv4cg',
     password: 'ZCY0AtinSfje5DtFrfDk',
     port: 3306,
-    database: 'bylanpdxjlmrw2ixoud8'
+    database: 'bylanpdxjlmrw2ixoud8',
+    connectTimeout: 100000,
 });

@@ -4,13 +4,13 @@ import { pool } from '../bd.js'
 
 export const getUsuarios = async (req, res) => {
     
-try {
-    const [rows] = await pool.query('SELECT * FROM Usuario')
-    res.json(rows)
-} catch (error) {
-    console.error('Error al obtener los usuarios:', error);
-    res.status(500).json({ message: "Error al obtener los usuarios" });
-}    
+    try {
+        const [rows] = await pool.query('SELECT * FROM Usuario')
+        res.json(rows)
+    } catch (error) {
+        console.error('Error al obtener los usuarios:', error);
+        res.status(500).json({ message: "Error al obtener los usuarios" });
+    }    
 }
 
 
