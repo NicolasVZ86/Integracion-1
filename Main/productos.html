@@ -10,183 +10,221 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
-    <nav class="navbar fixed-top">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header menu_header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Titulo Pagina</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body menu_despe">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle menu" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Categorias
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Anillos</a></li>
-                    <li><a class="dropdown-item" href="#">Aros</a></li>
-                    <li><a class="dropdown-item" href="#">Collares</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <form class="d-flex align-items-center menu_busqueda" role="search">
-            <div class="d-flex align-items-center busqueda">
-                <input class="form-control me-2 barra" type="search" placeholder="Buscar" aria-label="Search">
-                <i class="bi bi-search lupa"></i>
-            </div>
-            <i class="bi bi-cart-fill carro"></i>
-        </form>
-        </div>
-    </nav>
-    <div class="container py-5 mt-5">
-        <h1 class="text-center">Productos</h1>
-        <div class="row row-cols-1 row-cols-md-4 g-4 py-5">
-    
-            <div class="col card_container">
-                <div class="card">
-                    <img src="productos/producto1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
+    <div class="wrap">
+        <div class="store-wrapper">
+            <nav class="navbar fixed-top">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header menu_header">
+                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Titulo Pagina</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn_producto">Comprar</button>
+                    <div class="offcanvas-body menu_despe">
+                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle menu" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorias
+                          </a>
+                          <ul class="dropdown-menu category_list">
+                            <li><a class="dropdown-item category_item" category="all" href="#">Todos</a></li>
+                            <li><a class="dropdown-item category_item" category="anillos" href="#">Anillos</a></li>
+                            <li><a class="dropdown-item category_item" category="aros" href="#">Aros</a></li>
+                            <li><a class="dropdown-item category_item" category="collares" href="#">Collares</a></li>
+                          </ul>
+                        </li>
+                      </ul>
                     </div>
-                </div>
-            </div>
-    
-            <div class="col">
-                <div class="card">
-                    <img src="productos/producto2.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn_producto">Comprar</button>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col">
-                <div class="card">
-                    <img src="productos/producto3.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn_producto">Comprar</button>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col">
-                <div class="card">
-                    <img src="productos/producto4.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn_producto">Comprar</button>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col">
-                <div class="card">
-                    <img src="productos/producto5.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn_producto">Comprar</button>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col">
-                <div class="card">
-                    <img src="productos/producto6.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>190$</h3>
-                        <button class="btn_producto">Comprar</button>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col">
-              <div class="card">
-                  <img src="productos/producto7.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                      <h5 class="card-title">Nombre</h5>
-                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                          dignissimos accusantium amet similique velit iste.</p>
                   </div>
-                  <div class="mb-5 d-flex justify-content-around">
-                      <h3>190$</h3>
-                      <button class="btn_producto">Comprar</button>
+                  <form class="d-flex align-items-center menu_busqueda" role="search">
+                    <div class="d-flex align-items-center busqueda">
+                        <input class="form-control me-2 barra" type="search" placeholder="Buscar" aria-label="Search">
+                        <i class="bi bi-search lupa"></i>
+                    </div>
+                    <i class="bi bi-cart-fill carro"></i>
+                </form>
+                </div>
+            </nav>
+            <div class="container py-5 mt-5">
+                <h1 class="text-center">Productos</h1>
+                <div class="row row-cols-1 row-cols-md-4 g-4 py-5 products-list">
+            
+                    <div class="col card_container product-item" category="anillos">
+                        <div class="card">
+                            <img src="productos/producto1.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                                    dignissimos accusantium amet similique velit iste.</p>
+                            </div>
+                            <div class="mb-5 d-flex justify-content-around">
+                                <h3>190$</h3>
+                                <button class="btn_producto">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col product-item" category="anillos">
+                        <div class="card">
+                            <img src="productos/producto2.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                                    dignissimos accusantium amet similique velit iste.</p>
+                            </div>
+                            <div class="mb-5 d-flex justify-content-around">
+                                <h3>190$</h3>
+                                <button class="btn_producto">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col product-item" category="anillos">
+                        <div class="card">
+                            <img src="productos/producto3.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                                    dignissimos accusantium amet similique velit iste.</p>
+                            </div>
+                            <div class="mb-5 d-flex justify-content-around">
+                                <h3>190$</h3>
+                                <button class="btn_producto">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col product-item" category="anillos">
+                        <div class="card">
+                            <img src="productos/producto4.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                                    dignissimos accusantium amet similique velit iste.</p>
+                            </div>
+                            <div class="mb-5 d-flex justify-content-around">
+                                <h3>190$</h3>
+                                <button class="btn_producto">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col product-item" category="anillos">
+                        <div class="card">
+                            <img src="productos/producto5.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                                    dignissimos accusantium amet similique velit iste.</p>
+                            </div>
+                            <div class="mb-5 d-flex justify-content-around">
+                                <h3>190$</h3>
+                                <button class="btn_producto">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col product-item" category="anillos">
+                        <div class="card">
+                            <img src="productos/producto6.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                                    dignissimos accusantium amet similique velit iste.</p>
+                            </div>
+                            <div class="mb-5 d-flex justify-content-around">
+                                <h3>190$</h3>
+                                <button class="btn_producto">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col product-item" category="aros">
+                      <div class="card">
+                          <img src="productos/producto7.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h5 class="card-title">Nombre</h5>
+                              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                                  dignissimos accusantium amet similique velit iste.</p>
+                          </div>
+                          <div class="mb-5 d-flex justify-content-around">
+                              <h3>190$</h3>
+                              <button class="btn_producto">Comprar</button>
+                          </div>
+                      </div>
+                  </div>
+            
+                  <div class="col product-item" category="aros">
+                    <div class="card">
+                        <img src="productos/producto8.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nombre</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                                dignissimos accusantium amet similique velit iste.</p>
+                        </div>
+                        <div class="mb-5 d-flex justify-content-around">
+                            <h3>190$</h3>
+                            <button class="btn_producto">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col product-item" category="aros">
+                  <div class="card">
+                      <img src="productos/producto9.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title">Nombre</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                              dignissimos accusantium amet similique velit iste.</p>
+                      </div>
+                      <div class="mb-5 d-flex justify-content-around">
+                          <h3>190$</h3>
+                          <button class="btn_producto">Comprar</button>
+                      </div>
                   </div>
               </div>
-          </div>
-    
-          <div class="col">
-            <div class="card">
-                <img src="productos/producto8.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Nombre</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                        dignissimos accusantium amet similique velit iste.</p>
-                </div>
-                <div class="mb-5 d-flex justify-content-around">
-                    <h3>190$</h3>
-                    <button class="btn_producto">Comprar</button>
+
+              <div class="col product-item" category="collares">
+                <div class="card">
+                    <img src="productos/producto10.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                            dignissimos accusantium amet similique velit iste.</p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3>190$</h3>
+                        <button class="btn_producto">Comprar</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    
-        <div class="col">
-          <div class="card card_custom">
-              <img src="productos/producto9.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">Nombre</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                      dignissimos accusantium amet similique velit iste.</p>
-              </div>
-              <div class="mb-5 d-flex justify-content-around">
-                  <h3>190$</h3>
-                  <button class="btn_producto">Comprar</button>
-              </div>
-          </div>
-      </div>
-        </div>
-    </div>   
+
+            <div class="col product-item" category="collares">
+                <div class="card">
+                    <img src="productos/producto11.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                            dignissimos accusantium amet similique velit iste.</p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3>190$</h3>
+                        <button class="btn_producto">Comprar</button>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>  
+        </div> 
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
+
+    <script src="JS/jquery-3.2.1.js"></script>
+    <script src="JS/script.js"></script>
 </body>
 </html>
 
