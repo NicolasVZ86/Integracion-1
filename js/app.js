@@ -1,8 +1,9 @@
-const express = require('express');
-const mysql = require('mysql');
+import express from 'express';
+import mysql from 'mysql';
+import cors from 'cors';
+import path from 'path';
+
 const app = express();
-const cors = require('cors');
-const path = require('path');
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -14,7 +15,7 @@ app.use(cors());
 
 // Ruta para servir el archivo index.html
 app.get('/', (req, res) => {
-  const indexPath = path.join(__dirname, 'public', 'index.html');
+  const indexPath = path.join(process.cwd(), 'public', 'index.html');
   res.sendFile(indexPath);
 });
 
@@ -52,6 +53,22 @@ app.get('/buscar-producto/:valorBusqueda', (req, res) => {
     res.json(results);
   });
 });
+
+// Ruta para simular la suma de productos en el carrito de compra
+app.post('/simular-suma-productos', (req, res) => {
+  const productosSeleccionados = req.body.productos; // Array de IDs de productos seleccionados
+
+  // Calcular la suma de precios de los productos seleccionados
+  const precioTotal = productosSeleccionados.reduce((total, productoId) => {
+    if (productos[productoId]) {
+      return total + productos[productoId].precio;
+    }
+    return total;
+  }, 0);
+
+  res.json({ precioTotal });
+});
+
 
 const PORT = 3001;
 app.listen(PORT, () => {
