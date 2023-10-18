@@ -242,6 +242,8 @@ ul {
 
 .title_ventaja {
   color: slateblue;
+  text-align: center;
+  padding-top: 4em;
 }
 
 .img_ventaja {
@@ -263,6 +265,25 @@ small {
 
 .icon_social:hover {
   color: slateblue;
+}
+
+.galeria_container{
+  padding-block: 2em;
+}
+
+.galeria{
+  gap: 10px;
+}
+
+.galeria2{
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.img_galeria{
+  width: 400px;
+  box-shadow: 0 4px 7px rgba(0 0 0 / 0.5);
+  border-radius: 4px;
 }
 
 @media screen and (max-width: 992px) {
