@@ -1,0 +1,61 @@
+/* Estilo general del cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+/* Estilo del encabezado h1 */
+h1 {
+    color: #333;
+}
+
+/* Estilo del formulario */
+form {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de las etiquetas de formulario */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Estilo de los campos de entrada de formulario */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Estilo del botón de envío */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Estilo para el enlace de la hoja de estilo externa */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+/* Cambiar el estilo del botón al pasar el ratón */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
