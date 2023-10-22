@@ -15,7 +15,7 @@ const connection = mysql.createConnection(dbConfig);
 
 app.put('/editar/:id', (req, res) => {
   const id = req.params.id;
-  const newData = req.body; // Los datos que deseas actualizar
+  const newData = req.body; // Los datos que deseas actualizar // nuevo dato
 
   connection.query('UPDATE Usuario SET ? WHERE ID = ?', [newData, id], (error, results) => {
     if (error) {
