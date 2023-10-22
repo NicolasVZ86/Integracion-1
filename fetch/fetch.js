@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const parrafosContainer = document.getElementById('aqui va lo que se quiere mostrar o donde');
 
-    fetch('informacion.php') 
+    fetch('') 
         .then(response => {
             if (!response.ok) {
                 throw new Error('La solicitud Fetch no fue exitosa');
