@@ -1,6 +1,5 @@
+
 import { pool } from '../bd.js'
-
-
 
 export const getUsuarios = async (req, res) => {
     
@@ -15,7 +14,6 @@ export const getUsuarios = async (req, res) => {
 
 
 //const sql = 'SELECT * FROM usuarios'
-
 
 export const getUsuario = async (req, res) => {
 
@@ -90,5 +88,3 @@ export const updateUsuarios = async (req, res) => {
         res.status(500).json({ message: "Error al actualizar el usuario" });
     }
 }
-//const sql = 'UPDATE usuarios SET ? WHERE id = ?'
-

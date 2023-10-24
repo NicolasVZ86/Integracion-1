@@ -1,3 +1,4 @@
+
 import { Router } from "express";
 
 import { getUsuarios, createUsuarios, updateUsuarios, deleteUsuarios, getUsuario } from "../controllers/usuarios.controllers.js";
@@ -9,7 +10,7 @@ router.get('/usuarios', getUsuarios)
 
 router.get('/usuarios/:id', getUsuario)
 
-router.post('/usuarios',createUsuarios )
+router.post('/usuarios', createUsuarios)
 //const sql = 'INSERT INTO usuarios SET ?'
 
 router.put('/usuarios/:id', updateUsuarios)
