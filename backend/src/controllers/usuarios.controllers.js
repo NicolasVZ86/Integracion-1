@@ -1,17 +1,21 @@
-
 import { pool } from '../bd.js'
 
-export const getUsuarios = async (req, res) => {
 
+
+export const getUsuarios = async (req, res) => {
+    
     try {
         const [rows] = await pool.query('SELECT * FROM Usuario')
         res.json(rows)
     } catch (error) {
         console.error('Error al obtener los usuarios:', error);
         res.status(500).json({ message: "Error al obtener los usuarios" });
-    }
+    }    
 }
+
+
 //const sql = 'SELECT * FROM usuarios'
+
 
 export const getUsuario = async (req, res) => {
 
@@ -19,10 +23,10 @@ export const getUsuario = async (req, res) => {
         const [rows] = await pool.query('SELECT * FROM Usuario WHERE ID = ?', [req.params.id])
         if (rows.length <= 0) return res.status(404).json({ message: "El usuario no existe" })
         res.json(rows[0])
-    } catch (error) {
+    } catch (error) {       
         console.error('Error al obtener el usuario:', error);
         res.status(500).json({ message: "Error al obtener el usuario" });
-
+        
     }
 
 }
@@ -59,8 +63,8 @@ export const deleteUsuarios = async (req, res) => {
     } catch (error) {
         console.error('Error al eliminar el usuario:', error);
         res.status(500).json({ message: "Error al eliminar el usuario" });
-
-    }
+        
+    }     
 
 }
 //const sql = 'DELETE FROM usuarios WHERE id = ?'
