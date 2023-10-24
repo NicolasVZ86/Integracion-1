@@ -1,4 +1,3 @@
-
 import { Router } from "express";
 
 import { sessionValidation, roleValidation } from "../middlewares/cuenta.mw.js"
