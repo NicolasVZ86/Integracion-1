@@ -23,8 +23,9 @@ header {
 }
 
 .logo img {
-  max-width: 60px; /* Establece el ancho máximo del logotipo */
-  margin-right: 0px; /* Añade un pequeño margen entre el logotipo y el título */
+  max-width: 20%; /* Establece el ancho máximo del logotipo */
+  height: auto;
+  margin-right: 10px; /* Añade un pequeño margen entre el logotipo y el título */
 }
 
 .titulo {
