@@ -1,4 +1,6 @@
 
-export const JWT_SECRET = "perfumeria_secret"
+import { config } from "dotenv";
 
-export const DB_URL = "34.176.226.19"
+export const JWT_SECRET = process.env.JWT_SECRET || "perfumeria_secret"
+export const PORT = process.env.PORT || 3000
+export const DB_URL = process.env.DB_URL || "localhost"

@@ -1,5 +1,6 @@
-
 import { pool } from '../bd.js'
+
+
 
 export const getUsuarios = async (req, res) => {
     
@@ -14,6 +15,7 @@ export const getUsuarios = async (req, res) => {
 
 
 //const sql = 'SELECT * FROM usuarios'
+
 
 export const getUsuario = async (req, res) => {
 

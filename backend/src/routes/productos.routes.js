@@ -5,7 +5,7 @@ import { getProductos, getProducto } from "../controllers/productos.controllers.
 const router = Router();
 
 router.get('/productos', getProductos)
-//const sql = 'SELECT * FROM productos'
+
 router.get('/productos/:id', getProducto)
 
 export default router
