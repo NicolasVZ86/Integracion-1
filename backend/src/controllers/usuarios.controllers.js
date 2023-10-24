@@ -90,4 +90,3 @@ export const updateUsuarios = async (req, res) => {
         res.status(500).json({ message: "Error al actualizar el usuario" });
     }
 }
-//const sql = 'UPDATE usuarios SET ? WHERE id = ?'
