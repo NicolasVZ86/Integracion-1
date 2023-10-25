@@ -1,13 +1,13 @@
 /* ************ Propiedades Personalizadas ************ */
 :root {
-    --first-color: rgb(113, 201, 206);
+    --first-color: rgba(173, 216, 230, 0.7);
     --first-alpha-color: rgba(113, 201, 206, 0.75);
 
     --second-color: rgb(166, 227, 233);
     --second-alpha-color: rgba(166, 227, 233, 0.75);
 
-    --link-color: rgb(17, 106, 123);
-    --link-alpha-color: rgba(17, 106, 123, 0.75);
+    --link-color: rgb(67, 139, 145);
+    --link-alpha-color: rgba(17, 106, 123, 0.5);
 
     --bg-color: rgb(203, 241, 245);
     --bg-alpha-color: rgba(203, 241, 245, 0.75);
@@ -16,7 +16,7 @@
 /* Fuente */
 body {
     font-family: "Quicksand", sans-serif;
-    background: var(--bg-color);
+    background: var(--link-color);
 }
 
 .prod-carrito {
@@ -26,7 +26,7 @@ body {
 
 .pago-carrito {
     height: 60vh;
-    background: var(--second-color);
+    background: var(--first-color);
 }
 
 .precio-prod {
@@ -48,16 +48,16 @@ body {
 // No media query for `xs` since this is the default in Bootstrap */
 
 /* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {}
+/* @media (min-width: 576px) {} */
 
 /* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {}
+/* @media (min-width: 768px) {} */
 
 /* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {}
+/* @media (min-width: 992px) {} */
 
 /* // X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+/* @media (min-width: 1200px) {} */
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {}
+/* @media (min-width: 1400px) {} */

@@ -1,8 +1,9 @@
 import express from "express"
 import userRoutes from "./routes/usuarios.routes.js"
 import rutasproducto from "./routes/productos.routes.js"
-import cuentaRoutes from ".routes/cuenta.routes.js"
-import {PORT} from "./config.js"
+import cuentaRoutes from "./routes/cuenta.routes.js"
+import {PORT} from "./config/config.js"
+import { pool } from "./config/bd.js"
 
 const app = express()
 
@@ -16,4 +17,4 @@ app.use((req,res,next)=>{
 })
 
 app.listen(PORT)
-console.log(`http://localhost:${PORT}/api/usuarios`)
+console.log(`http://localhost:${PORT}/api/`)

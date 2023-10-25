@@ -1,7 +1,7 @@
 
 import { createPool } from 'mysql2/promise'
 
-export const pool = mysql.createPool({
+export const pool = createPool({
   host: 'localhost',
   user: 'root',
   database: 'joyeria',
@@ -13,3 +13,13 @@ export const pool = mysql.createPool({
   enableKeepAlive: false, // permite reutilizar las conexiones ya realizadas en lugar de crear nuevas
   keepAliveInitialDelay: 0  //
 });
+
+// Conexion a la base de datos
+// export const pool = createPool({    
+//     host: 'bylanpdxjlmrw2ixoud8-mysql.services.clever-cloud.com',
+//     user:  'uofv0bbpla2jv4cg',
+//     password: 'ZCY0AtinSfje5DtFrfDk',
+//     port: 3306,
+//     database: 'bylanpdxjlmrw2ixoud8',
+//     connectTimeout: 100000,
+// });

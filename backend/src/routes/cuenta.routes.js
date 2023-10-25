@@ -1,7 +1,7 @@
 
 import { Router } from 'express'
 import { sessionValidation } from '../middlewares/cuenta.mw.js'
-import { loginController, registerController } from '../controllers/cuenta.controller.js'
+import { loginController, registerController } from '../controllers/cuenta.controllers.js'
 
 const router = Router()
 

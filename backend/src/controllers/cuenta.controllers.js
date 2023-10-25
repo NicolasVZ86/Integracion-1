@@ -1,5 +1,5 @@
 
-import { pool } from '../database.js'
+import { pool } from '../config/bd.js'
 import { newToken } from '../utils/jwt.utils.js'
 import { tokensInvalidos } from '../utils/tokens.utils.js'
 import { hashPassword, comparePassword } from '../utils/bcrypt.utils.js'
@@ -8,21 +8,23 @@ export const loginController = async (req, res) => {
 
     try {
 
-        const { email, password } = req.body
+        const { email, contraseña } = req.body
 
         const query = `
-            SELECT * FROM usuarios
-            WHERE email = $1 AND password = $2
+            SELECT * FROM usuario
+            WHERE Correo = ? AND contraseña = ?
         `
 
-        const result = await pool.query(query, [email, password])
+        const [ rows ]= await pool.query(query, [email, contraseña])
 
-        if (result.rows.length === 0) {
+        console.log(rows)
+
+        if (rows.length === 0) {
             throw { status: 404, message: "User not found" }
         }
 
-        const user = result.rows[0]
-        const isValidPassword = await comparePassword(password, user.password)
+        const user = rows[0]
+        const isValidPassword = await comparePassword(password, user.contraseña)
 
         if (!isValidPassword) {
             throw { status: 401, message: "Invalid credentials" }
@@ -43,26 +45,26 @@ export const loginController = async (req, res) => {
 export const registerController = async (req, res) => {
 
     try {
-
-        const { Nombre, Apellido, email, password } = req.body
+        const { nombre, email, usuario, contraseña} = req.body
 
         let query = `
-            SELECT * FROM usuarios
-            WHERE Nombre = $1 AND Apellido = $2 OR email = $3
+            SELECT * FROM Usuario
+            WHERE Nombre = ? OR Correo = ?
         `
-        let result = await pool.query(query, [Nombre, Apellido, email])
+        let [ rows ] = await pool.query(query, [nombre, email])
 
-        if (result.rows.length > 0) {
+        if (rows.length > 0) {
             throw { status: 400, message: "Ya existe el usuario" }
         }
 
         query = `
-            INSERT INTO usuarios (nombre, apellido, email, password)
-            VALUES ($1, $2, $3, $4)
+            INSERT INTO usuario (nombre, correo, contraseña)
+            VALUES (?, ?, ?)
         `
 
-        const hashedPassword = hashPassword(password)
-        result = await pool.query(query, [Nombre, Apellido, email, hashedPassword])
+        const hashedPassword = await hashPassword(contraseña)
+        console.log(hashedPassword)
+        await pool.query(query, [nombre, email, hashedPassword])
 
         res.status(200).json({ message: "Usuario registrado correctamente" })
 
