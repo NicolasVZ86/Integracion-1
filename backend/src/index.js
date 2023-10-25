@@ -1,14 +1,13 @@
-import  express  from "express"
+import express from "express"
 import userRoutes from "./routes/usuarios.routes.js"
 import rutasproducto from "./routes/productos.routes.js"
-import authRoutes from '.routes/auth.routes.js'
-const PORT = 3000
+import cuentaRoutes from ".routes/cuenta.routes.js"
+import {PORT} from "./config.js"
 
 const app = express()
 
-
 app.use(express.json())
-app.use('/api',authRoutes)
+app.use('/api',cuentaRoutes)
 app.use('/api',userRoutes)
 app.use('/api',rutasproducto)
 
