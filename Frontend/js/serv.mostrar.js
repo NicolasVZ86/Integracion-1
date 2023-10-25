@@ -1,36 +1,72 @@
 document.addEventListener('DOMContentLoaded', () => {
     const parametrosBusqueda = new URLSearchParams(window.location.search);
     const resultadosJSON = parametrosBusqueda.get('resultados');
-    const resultados = JSON.parse(decodeURIComponent(resultadosJSON));
-    const resultadosLista = document.getElementById('resultadosLista');
+    const resultadosFiltrados = JSON.parse(decodeURIComponent(resultadosJSON));
 
-    resultados.forEach(producto => {
-        // Crear un div para cada producto
-        const productoDiv = document.createElement('div');
-        productoDiv.className = 'producto';
+    // Ordena los productos por nombre antes de mostrarlos en el DOM
+    resultadosFiltrados.sort((a, b) => a.Nombre.localeCompare(b.Nombre));
 
-        // Crear una imagen
-        const imagen = document.createElement('img');
-        imagen.src = producto.Imagen;
-        imagen.alt = producto.Nombre;
-        productoDiv.appendChild(imagen);
+    const contenedorResultados = document.getElementById('contenedorResultados');
 
-        // Crear un párrafo para el nombre del producto
-        const nombreProducto = document.createElement('p');
-        nombreProducto.textContent = `Nombre: ${producto.Nombre}`;
-        productoDiv.appendChild(nombreProducto);
+    // Limpia el contenedor antes de agregar los productos ordenados
+    contenedorResultados.innerHTML = '';
 
-        // Crear un párrafo para la descripción del producto
-        const descripcionProducto = document.createElement('p');
-        descripcionProducto.textContent = `Descripción: ${producto.Descripcion}`;
-        productoDiv.appendChild(descripcionProducto);
+    // Itera sobre los productos y agrégales un botón de compra
+    resultadosFiltrados.forEach((producto, index) => {
+        if (index % 3 === 0) {
+            // Crea una nueva fila para cada conjunto de 3 productos
+            const fila = document.createElement('div');
+            fila.className = 'row';
 
-        // Crear un botón de comprar
-        const comprarBtn = document.createElement('button');
-        comprarBtn.textContent = 'Comprar';
-        productoDiv.appendChild(comprarBtn);
+            // Crea columnas para los productos en la fila
+            for (let i = 0; i < 3 && index + i < resultadosFiltrados.length; i++) {
+                const productoActual = resultadosFiltrados[index + i];
 
-        // Agregar el productoDiv a la lista de resultados
-        resultadosLista.appendChild(productoDiv);
+                const columna = document.createElement('div');
+                columna.className = 'col-md-4 producto';
+
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+
+                const imagen = document.createElement('img');
+                imagen.src = productoActual.Imagen;
+                imagen.className = 'card-img-top';
+                imagen.alt = productoActual.Nombre;
+
+                const cardBodyDiv = document.createElement('div');
+                cardBodyDiv.className = 'card-body';
+
+                const titulo = document.createElement('h5');
+                titulo.className = 'card-title';
+                titulo.textContent = productoActual.Nombre;
+
+                const descripcion = document.createElement('p');
+                descripcion.className = 'card-text';
+                descripcion.textContent = productoActual.Descripcion;
+
+                cardBodyDiv.appendChild(imagen);
+                cardBodyDiv.appendChild(titulo);
+                cardBodyDiv.appendChild(descripcion);
+                cardDiv.appendChild(cardBodyDiv);
+                columna.appendChild(cardDiv);
+
+                // Crea un botón de compra para cada producto
+                const botonCompra = document.createElement('button');
+                botonCompra.className = 'btn btn-primary';
+                botonCompra.textContent = 'Comprar';
+
+                // Agrega un evento al botón de compra si es necesario
+                // botonCompra.addEventListener('click', () => {
+                //     // Lógica para el evento de compra
+                // });
+
+                cardBodyDiv.appendChild(botonCompra);
+
+                fila.appendChild(columna);
+            }
+
+            // Agrega la fila al contenedor de resultados
+            contenedorResultados.appendChild(fila);
+        }
     });
 });
