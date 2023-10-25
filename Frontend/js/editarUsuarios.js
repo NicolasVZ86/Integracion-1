@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const editarButton = document.getElementById('editarButton');
   editarButton.addEventListener('click', () => {
-      const id = document.getElementById('id').value;
       const nombre = document.getElementById('nombre').value;
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
       const newData = {
-          id,
           nombre,
           email,
           password
