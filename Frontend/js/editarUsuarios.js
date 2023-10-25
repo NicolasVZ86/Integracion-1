@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
           password
       };
 
-      fetch(`http://localhost:3000/api/usuarios${id}`, { 
+      fetch(`http://localhost:3000/api/login${id}`, { 
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json'
