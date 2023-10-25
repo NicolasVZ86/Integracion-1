@@ -3,45 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Usuario</title>
-    <link rel="stylesheet" type="text/css" href="./css/edit_info.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="CSS/index.css" />
-    <link rel="stylesheet" href="CSS/navegacion.css">
-    <link rel="stylesheet" href="CSS/main.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/order_menu.css">
-    <link rel="stylesheet" href="css/pos_menu.css">
-    <script src="js/menu.js"></script> 
+    <link rel="stylesheet" href="/Frontend/CSS/edit_info.css">
+    <title>Editar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/Frontend/CSS/index.css" />
+  <link rel="stylesheet" href="/Frontend/CSS/navegacion.css">
+  <link rel="stylesheet" href="/Frontend/CSS/main.css">
+  <link rel="stylesheet" href="/Frontend/CSS/header.css">
+  <link rel="stylesheet" href="/Frontend/CSS/order_menu.css">
+  <link rel="stylesheet" href="/Frontend/CSS/pos_menu.css">
+  <script src="/Frontend/js/menu.js"></script> 
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="./img/logo.png" alt="Logo de la Página">
-        </div>
-        <h1 class="titulo">Título de la Página</h1>
-        <nav>
-            <a href="#" class="enlace">Inicio de Sesión</a>
-            <a href="#" class="enlace">Registrarse</a>
-        </nav>
-    </header>
+        <script src="js/menu.js"></script>
+        <header class="text-white">
+          <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="logo">
+                <img class="" src="img/logo.png" alt="Sara Haro">
+              </div>
+              <h1></h1>
+              <div class="login-register">
+                <a href="login.html">Iniciar Sesión</a>
+                <a href="login.html">Registrarse</a>
+              </div>
+            </div>
+          </div>
+        </header>
+        <h1>Editar Usuario</h1>
 
-    <h1>Editar Usuario</h1>
-
-    <form action="./fetch/editarUsuarios.js" method="post" class="formulario">
-        <input type="hidden" name="id" value="1"> <!-- Cambia el ID según tus necesidades -->
+    <form id="editarForm" class="formulario">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email">
-        <label for="password">Contraseña:</label>
+        <label for= "password">Contraseña:</label>
         <input type="password" id="password" name="password">
-        <input type="submit" value="Editar Usuario" class="boton">
+        <input type="button" value="Editar Usuario" class="boton" id="editarButton">
     </form>
-
+        
     <footer class="p-3">
         <div class="container text-center">
           <nav class="d-flex justify-content-evenly">
@@ -56,6 +61,8 @@
           <small class="text-dark">
             &copy; 2023 Todos los derechos reservados.
           </small>
-    </footer>      
+        </div>
+      </footer>
 </body>
 </html>
+

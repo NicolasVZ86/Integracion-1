@@ -1,4 +1,4 @@
-import { pool } from '../bd.js';
+import { pool } from '../config/bd.js';
 
 // Obtener todos los productos
 export const getProductos = async (req, res) => {
