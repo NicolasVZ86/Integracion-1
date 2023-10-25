@@ -31,15 +31,15 @@
 
     <h1>Editar Usuario</h1>
 
-    <form action="./fetch/editarUsuarios.js" method="post" class="formulario">
-        <input type="hidden" name="id" value="1"> <!-- Cambia el ID según tus necesidades -->
+    <form id="editarForm" class="formulario">
+        <input type="hidden" id="id" name="id" value="1"> <!-- Cambia el ID según tus necesidades -->
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email">
-        <label for="password">Contraseña:</label>
+        <label for= "password">Contraseña:</label>
         <input type="password" id="password" name="password">
-        <input type="submit" value="Editar Usuario" class="boton">
+        <input type="button" value="Editar Usuario" class="boton" id="editarButton">
     </form>
 
     <footer class="p-3">
@@ -56,6 +56,7 @@
           <small class="text-dark">
             &copy; 2023 Todos los derechos reservados.
           </small>
-    </footer>      
+    </footer>   
+    <script src="./js/editarUsuario.js"></script>   
 </body>
 </html>
