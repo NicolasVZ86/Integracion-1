@@ -1,0 +1,76 @@
+header {
+    background-color: rgb(53, 100, 105);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-width: 20%;
+}
+
+.titulo {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+}
+
+.enlace {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+}
+
+/* Estilos para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(54, 121, 128);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#resultadosLista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    list-style: none;
+    padding: 20px; /* Añadir relleno al contenedor de resultados */
+    border-radius: 10px; /* Agregar bordes redondeados al contenedor de resultados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Agregar sombra al contenedor de resultados */
+}
+
+.producto {
+    border: 1px solid #f3f5f8;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(47, 129, 141); /* Establecer el color de fondo para cada producto */
+    border-radius: 8px; /* Agregar bordes redondeados a cada producto */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Agregar sombra a cada producto */
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
