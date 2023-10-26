@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const nombre = document.getElementById('nombre').value;
         const email = document.getElementById('email').value;
         const usuario = document.getElementById('usuario').value;
-        const contraseña = document.getElementById('contrasena').value;
+        const contraseña = document.getElementById('contraseña').value;
 
         const nuevaCuenta = {
-            nombre,
-            email,
-            usuario,
-            contraseña
+            Nombre: nombre,
+            Correo: email,
+            ID: usuario,
+            Contraseña: contraseña
         };
 
         // Realiza una solicitud POST al servidor con los datos de la nueva cuenta
