@@ -22,7 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify(nuevaCuenta)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error: ${response.statusText}`);
+            }
+            return response.json();
+        })
         .then(data => {
             alert(data.message);
         })
