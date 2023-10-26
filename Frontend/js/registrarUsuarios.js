@@ -2,16 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const registrarButton = document.getElementById('registrarButton');
 
     registrarButton.addEventListener('click', () => {
-        const nombre = document.getElementById('nombre').value;
-        const apellido = document.getElementById('apellido').value;
-        const email = document.getElementById('email').value;
-        const usuario = document.getElementById('usuario').value;
-        const contraseña = document.getElementById('contraseña').value;
+        const nombre = document.getElementById('Nombre').value;
+        const apellido = document.getElementById('Apellido').value;
+        const correo = document.getElementById('Correo').value;
+        const usuario = document.getElementById('Usuario').value;
+        const contraseña = document.getElementById('Contraseña').value;
 
         const nuevaCuenta = {
             Nombre: nombre,
             Apellido: apellido,
-            Correo: email,
+            Correo: correo,
             Contraseña: contraseña
         };
 
