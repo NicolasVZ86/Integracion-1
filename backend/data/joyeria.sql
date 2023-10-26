@@ -1,7 +1,6 @@
-CREATE DATABASE joyeria;
+CREATE DATABASE bylanpdxjlmrw2ixoud8;
 
-USE joyeria;
-
+USE bylanpdxjlmrw2ixoud8;
 
 CREATE TABLE Usuario (
     ID smallint unsigned auto_increment primary key,
