@@ -1,6 +1,6 @@
-CREATE DATABASE bylanpdxjlmrw2ixoud8;
+CREATE DATABASE joyeria;
 
-USE bylanpdxjlmrw2ixoud8;
+USE joyeria;
 
 
 CREATE TABLE Usuario (
