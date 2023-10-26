@@ -1,22 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const registrarButton = document.getElementById('registrarButton'); // Obtiene un botón con el id 'registrarButton'
+    const registrarButton = document.getElementById('registrarButton');
 
-    registrarButton.addEventListener('click', () => { // Agrega un event listener para el clic en el botón
-        // Obtiene los valores de los campos de entrada
+    registrarButton.addEventListener('click', () => {
         const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
         const email = document.getElementById('email').value;
         const usuario = document.getElementById('usuario').value;
         const contraseña = document.getElementById('contraseña').value;
 
         const nuevaCuenta = {
             Nombre: nombre,
+            Apellido: apellido,
             Correo: email,
-            ID: usuario,
             Contraseña: contraseña
         };
 
-        // Realiza una solicitud POST al servidor con los datos de la nueva cuenta
-        fetch(`http://localhost:3000/api/register`, {
+        fetch('http://localhost:3000/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => response.json())
         .then(data => {
-            alert(data.message); // Muestra un mensaje basado en la respuesta del servidor
+            alert(data.message);
         })
         .catch(error => {
             console.error('Error al registrar la cuenta: ', error);
