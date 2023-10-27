@@ -1,26 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
     const registrarButton = document.getElementById('registrarButton');
+
     registrarButton.addEventListener('click', () => {
-        const nombre = document.getElementById('nombre').value;
-        const email = document.getElementById('email').value;
-        const usuario = document.getElementById('usuario').value;
-        const contrasena = document.getElementById('contrasena').value;
+        const nombre = document.getElementById('Nombre').value;
+        const apellido = document.getElementById('Apellido').value;
+        const correo = document.getElementById('Correo').value;
+        const usuario = document.getElementById('Usuario').value;
+        const contraseña = document.getElementById('Contraseña').value;
 
         const nuevaCuenta = {
-            nombre,
-            email,
-            usuario,
-            contrasena
+            Nombre: nombre,
+            Apellido: apellido,
+            Correo: correo,
+            Contraseña: contraseña
         };
 
-        fetch(`http://localhost:3000/api/register`, {
+        fetch('http://localhost:3000/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(nuevaCuenta)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error: ${response.statusText}`);
+            }
+            return response.json();
+        })
         .then(data => {
             alert(data.message);
         })
