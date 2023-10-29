@@ -3,4 +3,4 @@ data/
 node_modules/
 config/
 .env
-bd.js
+.eslintrc.json
