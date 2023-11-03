@@ -1,25 +1,14 @@
+import { createPool } from 'mysql2/promise';
+import dotenv from 'dotenv';
 
-import { createPool } from 'mysql2/promise'
+dotenv.config();
 
-export const pool = createPool({
-  host: 'localhost',
-  user: 'root',
-  database: 'joyeria',
-  waitForConnections: true, // permite que las conexiones esperen cuando no hay conexiones solicitadas
-  connectionLimit: 10, // el numero maximo de conexiones simultaneas a la base de datos
-  maxIdle: 10, // numero maximo de conexiones inactivas que pueden estar en el grupo de conexiones
-  idleTimeout: 60000, // tiempo (en milisegundos) que una conexion puede estar inactiva antes de ser liberada
-  queueLimit: 0, // numero maximo de conexiones de trabajo permitidas en la cola (0 = ilimitado)
-  enableKeepAlive: false, // permite reutilizar las conexiones ya realizadas en lugar de crear nuevas
-  keepAliveInitialDelay: 0  //
+// Conexión a la base de datos
+export const pool = createPool({    
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    port: parseInt(process.env.DB_PORT),
+    database: process.env.DB_DATABASE,
+    connectTimeout: parseInt(process.env.DB_CONNECT_TIMEOUT),
 });
-
-// Conexion a la base de datos
-// export const pool = createPool({    
-//     host: 'bylanpdxjlmrw2ixoud8-mysql.services.clever-cloud.com',
-//     user:  'uofv0bbpla2jv4cg',
-//     password: 'ZCY0AtinSfje5DtFrfDk',
-//     port: 3306,
-//     database: 'bylanpdxjlmrw2ixoud8',
-//     connectTimeout: 100000,
-// });
