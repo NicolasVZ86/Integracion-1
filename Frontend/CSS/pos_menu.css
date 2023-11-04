@@ -1,0 +1,88 @@
+:root {
+    --first-color: rgb(113, 201, 206);
+    --first-alpha-color: rgba(113, 201, 206, 0.75);
+
+    --second-color: rgb(166, 227, 233);
+    --second-alpha-color: rgba(166, 227, 233, 0.75);
+
+    --link-color: rgb(17, 106, 123);
+    --link-alpha-color: rgba(17, 106, 123, 0.75);
+
+    --bg-color: rgb(203, 241, 245);
+    --bg-alpha-color: rgba(203, 241, 245, 0.75);
+}
+
+.main{
+    display: flex;
+    margin: 20px;
+}
+
+.aside-container{
+    width: 20%;
+    background-color:#A6E3E9;
+    height: 400px;
+}
+
+.menu-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Centra los botones horizontalmente */
+    height: 250px;
+}
+
+.menu-nav a{
+    margin: auto;
+    text-decoration: none;
+    color: rgb(12, 12, 12);
+}
+
+.productos{
+    margin: auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+   
+    gap: 50px 10px;
+}
+
+.contenido{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #71C9CE;
+}
+
+.contenido h3{
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.contenido button{
+    margin: 10px 0;
+    padding: .5em 5em;
+    background-color: #A6E3E9;
+    border-radius: 20px;
+    border: 1px solid #A6E3E9;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 1px 1px 5px rgba(0 0 0 / .5);
+}
+.menu-nav {
+    display: none; /* Ocultar el menú por defecto */
+  }
+  
+  .menu-nav.show-menu {
+    display: flex; /* Mostrar el menú cuando se aplica la clase "show-menu" */
+    flex-direction: column;
+    background-color: #71C9CE;
+    position: absolute;
+    top: 120px; /* Ajusta la posición según sea necesario */
+    right: 1200px; /* Ajusta la posición según sea necesario */
+    padding: 5px;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px; /*borde redondeado */
+  }
+
+  
+  
