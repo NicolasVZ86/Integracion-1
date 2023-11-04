@@ -1,53 +1,48 @@
-
-import { pool } from "../config/bd.js"
-import { JWT_SECRET } from "../config/config.js"
-import { verifyToken } from "../utils/jwt.utils.js"
-import { tokensInvalidos } from "../utils/tokens.utils.js"
+import { pool } from '../config/bd.js'
+import { JWT_SECRET } from '../config/config.js'
+import { verifyToken } from '../utils/jwt.utils.js'
+import { tokensInvalidos } from '../utils/tokens.utils.js'
 
 export const sessionValidation = async (req, res, next) => {
-
     try {
-        const token = req.headers.authorization.split(" ")[1]
-        const payload = verifyToken(token, JWT_SECRET)
+        const token = req.headers.authorization.split(' ')[1]
 
         if (tokensInvalidos.includes(token)) {
-            throw { status: 401, message: "Unauthorized" }
+            throw { status: 401, message: 'Unauthorized' }
         }
+
+        const payload = verifyToken(token, JWT_SECRET)
 
         req.payload = payload
         req.token = token
         next()
-
     } catch (error) {
         return res.status(401).json({ message: error.message })
     }
 }
 
 export const roleValidation = (roles) => async (req, res, next) => {
-
     try {
-
         const { uid } = req.payload
 
         const query = `
-            SELECT * FROM usuarios
-            WHERE id = $1
+            SELECT * FROM Usuario 
+            WHERE id = ?
         `
 
         const result = await pool.query(query, [uid])
 
-        if (result.rows.length === 0) {
-            throw { status: 404, message: "User not found" }
+        if (result.length === 0) {
+            throw { status: 404, message: 'User not found' }
         }
 
         const user = result.rows[0]
 
         if (!roles.includes(user.rol)) {
-            throw { status: 401, message: "Unauthorized" }
+            throw { status: 401, message: 'Unauthorized' }
         }
 
         next()
-
     } catch (error) {
         return res.status(401).json({ message: error.message })
     }

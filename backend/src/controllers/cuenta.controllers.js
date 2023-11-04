@@ -5,28 +5,36 @@ import { hashPassword, comparePassword } from '../utils/bcrypt.utils.js'
 
 export const loginController = async (req, res) => {
     try {
-        const { email, contraseña } = req.body
+        const { Correo, Contraseña } = req.body
 
         const query = `
             SELECT * FROM usuario
-            WHERE Correo = ? AND contraseña = ?
+            WHERE Correo = ?
         `
 
-        const [rows] = await pool.query(query, [email, contraseña])
+        const [rows] = await pool.query(query, [Correo])
 
         if (rows.length === 0) {
-            throw new Error(JSON.stringify({ status: 404, message: 'User not found' }))
+            throw { status: 404, message: 'No se encontro el usuario' }
         }
 
         const user = rows[0]
-        const isValidPassword = await comparePassword(contraseña, user.contraseña)
 
+        const contra = 12345
+        const hashcontra = hashPassword(contra)
+        const contravalida = comparePassword(contra, hashcontra)
+        console.log(contravalida);
+
+        // La función comparePassword esta retornando false pese a estar bien la contraseña
+        // HAY QUE REVISAR MAS A FONDO BCRYPT
+
+        const isValidPassword = await comparePassword(Contraseña, user.Contraseña)
         if (!isValidPassword) {
-            throw new Error(JSON.stringify({ status: 401, message: 'Invalid credentials' }))
+            throw { status: 401, message: 'Invalid credentials' }
         }
 
         const payload = {
-            uid: user.id,
+            uid: user.ID,
         }
 
         const token = newToken(payload)
