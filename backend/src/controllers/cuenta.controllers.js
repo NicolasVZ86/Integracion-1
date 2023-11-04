@@ -23,7 +23,6 @@ export const loginController = async (req, res) => {
         const contra = 12345
         const hashcontra = hashPassword(contra)
         const contravalida = comparePassword(contra, hashcontra)
-        console.log(contravalida);
 
         // La función comparePassword esta retornando false pese a estar bien la contraseña
         // HAY QUE REVISAR MAS A FONDO BCRYPT

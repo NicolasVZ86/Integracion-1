@@ -9,9 +9,9 @@ export const getProductos = async (req, res) => {
             return res.status(404).json({ message: 'No hay productos' })
         }
 
-        res.status(200).json(rows);
+        return res.status(200).json(rows);
     } catch (error) {
-        res.status(500).json({ message: 'Error interno del servidor' });
+        return res.status(500).json({ message: 'Error interno del servidor' });
     }
 }
 
@@ -25,9 +25,9 @@ export const getProducto = async (req, res) => {
             return res.status(404).json({ message: 'El producto no existe' })
         }
 
-        res.status(200).json(rows[0]);
+        return res.status(200).json(rows[0]);
     } catch (error) {
-        res.status(500).json({ message: 'Error interno del servidor' })
+        return res.status(500).json({ message: 'Error interno del servidor' })
     }
 }
 
@@ -45,7 +45,7 @@ export const createProducto = async (req, res) => {
             [Nombre, Descripcion, Precio, PorcentajeDescuento, Almacenamiento],
         )
 
-        res.status(201).json({
+        return res.status(201).json({
             ID: rows.insertId,
             Nombre,
             Descripcion,
@@ -54,7 +54,7 @@ export const createProducto = async (req, res) => {
             Almacenamiento,
         });
     } catch (error) {
-        res.status(500).json({ message: 'Error interno del servidor' })
+        return res.status(500).json({ message: 'Error interno del servidor' })
     }
 }
 
@@ -63,12 +63,11 @@ export const deleteProducto = async (req, res) => {
     try {
         const [rows] = await pool.query('DELETE FROM Productos WHERE ID = ?', [req.params.id]);
         if (rows.affectedRows <= 0) {
-            return res.status(404).json({ message: "El producto no existe" });
+            return res.status(404).json({ message: 'El producto no existe' })
         }
-        res.status(200).json({ message: "El producto ha sido eliminado" });
+        return res.status(200).json({ message: 'El producto ha sido eliminado' })
     } catch (error) {
-        console.error('Error al eliminar el producto:', error);
-        res.status(500).json({ message: "Error interno del servidor" });
+        return res.status(500).json({ message: 'Error interno del servidor' })
     }
 }
 
@@ -76,19 +75,24 @@ export const deleteProducto = async (req, res) => {
 export const updateProducto = async (req, res) => {
     try {
         const { id } = req.params;
-        const { Nombre, Descripcion, Precio, PorcentajeDescuento, Almacenamiento } = req.body;
+        const {
+            Nombre, Descripcion, Precio, PorcentajeDescuento, Almacenamiento,
+        } = req.body;
 
         const [existingProducts] = await pool.query('SELECT * FROM Productos WHERE ID = ?', [id]);
         if (!existingProducts || existingProducts.length === 0) {
-            return res.status(404).json({ message: "El producto no existe" });
+            return res.status(404).json({ message: 'El producto no existe' })
         }
 
-        const [results] = await pool.query('UPDATE Productos SET Nombre = IFNULL(?, Nombre), Descripcion = IFNULL(?, Descripcion), Precio = IFNULL(?, Precio), PorcentajeDescuento = IFNULL(?, PorcentajeDescuento), Almacenamiento = IFNULL(?, Almacenamiento) WHERE ID = ?', [Nombre, Descripcion, Precio, PorcentajeDescuento, Almacenamiento, id]);
+        const query = `
+        UPDATE Productos SET Nombre = IFNULL(?, Nombre), Descripcion = IFNULL(?, Descripcion), Precio = IFNULL(?, Precio), PorcentajeDescuento = IFNULL(?, PorcentajeDescuento), Almacenamiento = IFNULL(?, Almacenamiento) WHERE ID = ?
+        `
+        // Actualizar el producto
+        await pool.query(query, [Nombre, Descripcion, Precio, PorcentajeDescuento, Almacenamiento]);
 
         const [rows] = await pool.query('SELECT * FROM Productos WHERE ID = ?', [id]);
-        res.status(200).json(rows[0]);
+        return res.status(200).json(rows[0]);
     } catch (error) {
-        console.error('Error al actualizar el producto:', error);
-        res.status(500).json({ message: "Error interno del servidor" });
+        return res.status(500).json({ message: 'Error interno del servidor' });
     }
 }

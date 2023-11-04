@@ -1,21 +1,25 @@
 import { pool } from '../config/bd.js'
 import { JWT_SECRET } from '../config/config.js'
-import { verifyToken } from '../utils/jwt.utils.js'
+import { verifyToken, newToken } from '../utils/jwt.utils.js'
 import { tokensInvalidos } from '../utils/tokens.utils.js'
 
 export const sessionValidation = async (req, res, next) => {
     try {
-        const token = req.headers.authorization.split(' ')[1]
-
+        // const tokk = newToken({ uid: 1 })
+        // console.log(tokk);
+        const token = req.headers.authorization
+        console.log(typeof token);
         if (tokensInvalidos.includes(token)) {
             throw { status: 401, message: 'Unauthorized' }
         }
 
         const payload = verifyToken(token, JWT_SECRET)
 
+        // console.log(payload);
+
         req.payload = payload
         req.token = token
-        next()
+        return next()
     } catch (error) {
         return res.status(401).json({ message: error.message })
     }
@@ -24,6 +28,7 @@ export const sessionValidation = async (req, res, next) => {
 export const roleValidation = (roles) => async (req, res, next) => {
     try {
         const { uid } = req.payload
+        console.log(uid);
 
         const query = `
             SELECT * FROM Usuario 
@@ -42,7 +47,7 @@ export const roleValidation = (roles) => async (req, res, next) => {
             throw { status: 401, message: 'Unauthorized' }
         }
 
-        next()
+        return next()
     } catch (error) {
         return res.status(401).json({ message: error.message })
     }
