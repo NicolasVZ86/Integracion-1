@@ -1,0 +1,146 @@
+:root {
+    --first-color: rgb(113, 201, 206);
+    --first-alpha-color: rgba(113, 201, 206, 0.75);
+
+    --second-color: rgb(166, 227, 233);
+    --second-alpha-color: rgba(166, 227, 233, 0.75);
+
+    --link-color: rgb(17, 106, 123);
+    --link-alpha-color: rgba(17, 106, 123, 0.75);
+
+    --bg-color: rgb(203, 241, 245);
+    --bg-alpha-color: rgba(203, 241, 245, 0.75);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+img{
+    width: 100%;
+    border-radius: 2px;
+}
+
+.navegacion{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 90px;
+    background-color: var(--bg-color);
+    margin: auto;
+}
+
+.carrito{
+    width: 30px;
+}
+
+.search-icon{
+    width: 30px;
+    margin: 10px;
+}
+
+.menu{
+    width: 30%;
+}
+
+.menu button{
+    margin-left: 100px;
+    padding: 10px 40px;
+    background-color: #A6E3E9;
+    border: 1px solid #A6E3E9;
+    border-radius: 5px;
+
+}
+
+.search{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.barra{
+    width: 600px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border-style: none;
+    background-color: #A6E3E9;
+}
+
+.barra-search{
+    display: flex;
+    align-items: center;
+}
+.menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-nav button {
+    margin: 10px; /* Espaciado entre los botones */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    background-color: #A6E3E9; /* Color de fondo personalizado */
+    color: white; /* Texto en color blanco */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  .main{
+    display: flex;
+    margin: 20px;
+}
+
+.aside-container{
+    width: 20%;
+    background-color:#A6E3E9;
+    height: 400px;
+}
+
+.menu-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+}
+
+.menu-nav a{
+    margin: auto;
+    text-decoration: none;
+    color: black;
+}
+
+.productos{
+    margin: auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+   
+    gap: 50px 10px;
+}
+
+.contenido{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #71C9CE;
+}
+
+.contenido h3{
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.contenido button{
+    margin: 10px 0;
+    padding: .5em 5em;
+    background-color: #A6E3E9;
+    border-radius: 20px;
+    border: 1px solid #A6E3E9;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 1px 1px 5px rgba(119, 73, 73, 0.5);
+}
