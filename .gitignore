@@ -1,6 +1,0 @@
-.gitignore
-data/
-node_modules/
-config/
-.env
-.eslintrc.json
