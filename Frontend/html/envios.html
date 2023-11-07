@@ -36,37 +36,37 @@
     </div>
   </header>
   <div class="container">
-     <h2 class="my-5">Formulario de Envío a Domicilio</h2>
-     <form>
-       <div class="row">
-         <div class="col-md-6">
-           <div class="mb-3">
-             <label for="nombre" class="form-label">Nombre:</label>
-             <input type="text" class="form-control" id="nombre" name="nombre" required>
-           </div>
-         </div>
-         <div class="col-md-6">
-           <div class="mb-3">
-             <label for="apellido" class="form-label">Apellido:</label>
-             <input type="text" class="form-control" id="apellido" name="apellido" required>
-           </div>
-         </div>
-       </div>
-       <div class="mb-3">
-         <label for="direccion" class="form-label">Dirección:</label>
-         <input type="text" class="form-control" id="direccion" name="direccion" required>
-       </div>
-       <div class="mb-3">
-         <label for="telefono" class="form-label">Teléfono:</label>
-         <input type="tel" class="form-control" id="telefono" name="telefono" required>
-       </div>
-       <div class="mb-3">
-         <label for="producto" class="form-label">Comentario:</label>
-         <input type="text" class="form-control" id="producto" name="Comentario" required>
-       </div>
-       <button type="submit" class="btn btn-primary">Enviar Pedido</button>
-     </form>
-  </div>
+    <h2 class="my-5">Formulario de Envío a Domicilio</h2>
+    <form method="post" action="js/RealizarEnvio.js"> 
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for = "apellido" class="form-label">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" required>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="direccion" class="form-label">Dirección:</label>
+        <input type="text" class="form-control" id="direccion" name="direccion" required>
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono:</label>
+        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+      </div>
+      <div class="mb-3">
+        <label for="comentario" class="form-label">Comentario:</label>
+        <textarea class="form-control" id="comentario" name="comentario" required></textarea> 
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+    </form>
+ </div>
         
     <footer class="p-3">
         <div class="container text-center">
