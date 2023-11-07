@@ -146,10 +146,16 @@ ul {
   box-shadow: 0 3px 5px rgba(0 0 0 / 0.5);
   background-color: rgba(173, 216, 230, 0.7);
   border: 2px solid slateblue;
+  height: 300px
 }
 
-.slider {
+.products-list {
+  display: flex;
+  /* flex-wrap: wrap; */
+  margin-top: 20px;
+
 }
+
 
 .slider_container {
   background-color: rgb(48, 116, 127);
