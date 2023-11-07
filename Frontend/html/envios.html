@@ -17,54 +17,56 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/order_menu.css">
   <link rel="stylesheet" href="css/pos_menu.css">
-  <script src="js/menu.js"></script>
+  <script src="js/menu.js"></script> 
 </head>
 <body>
-        <script src="js/menu.js"></script>
-        <header class="text-white">
-          <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="logo">
-                <img class="" src="img/logo.png" alt="Sara Haro">
-              </div>
-              <h1></h1>
-              <div class="login-register">
-                <a href="login.html">Iniciar Sesión</a>
-                <a href="login.html">Registrarse</a>
-              </div>
-            </div>
-          </div>
-        </header>
-        <div class="form-container">
-            <h2>Formulario de Envío a Domicilio</h2>
-            <form action="/enviar" method="post"></form>
-                    <div>
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-                    <div>
-                      <label for="direccion">Pais:</label>
-                      <input type="text" id="Pais" name="Pais" required>
-                  </div>
-                    <div>
-                    <label for="direccion">Ciudad:</label>
-                    <input type="text" id="Ciudad" name="Ciudad" required>
-                </div>
-                    <div>
-                        <label for="direccion">Dirección o calle:</label>
-                        <input type="text" id="direccion" name="direccion" required>
-                    </div>
-                    <div>
-                        <label for="telefono">Teléfono:</label>
-                        <input type="tel" id="telefono" name="telefono" required>
-                    </div>
-                    <div>
-                        <label for="producto">Comentario:</label>
-                        <input type="text" id="producto" name="Comentario" required>
-                    </div>
-                    <button type="submit">Enviar Pedido</button>
-            </form>
+  <script src="js/menu.js"></script>
+  <header class="text-white">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="logo">
+          <img class="" src="img/logo.png" alt="Sara Haro">
         </div>
+        <h1></h1>
+        <div class="login-register">
+          <a href="login.html">Iniciar Sesión</a>
+          <a href="login.html">Registrarse</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+     <h2 class="my-5">Formulario de Envío a Domicilio</h2>
+     <form>
+       <div class="row">
+         <div class="col-md-6">
+           <div class="mb-3">
+             <label for="nombre" class="form-label">Nombre:</label>
+             <input type="text" class="form-control" id="nombre" name="nombre" required>
+           </div>
+         </div>
+         <div class="col-md-6">
+           <div class="mb-3">
+             <label for="apellido" class="form-label">Apellido:</label>
+             <input type="text" class="form-control" id="apellido" name="apellido" required>
+           </div>
+         </div>
+       </div>
+       <div class="mb-3">
+         <label for="direccion" class="form-label">Dirección:</label>
+         <input type="text" class="form-control" id="direccion" name="direccion" required>
+       </div>
+       <div class="mb-3">
+         <label for="telefono" class="form-label">Teléfono:</label>
+         <input type="tel" class="form-control" id="telefono" name="telefono" required>
+       </div>
+       <div class="mb-3">
+         <label for="producto" class="form-label">Comentario:</label>
+         <input type="text" class="form-control" id="producto" name="Comentario" required>
+       </div>
+       <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+     </form>
+  </div>
         
     <footer class="p-3">
         <div class="container text-center">
