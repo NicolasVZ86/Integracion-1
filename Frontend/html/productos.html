@@ -89,53 +89,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
         </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Define la URL de la API que proporciona los productos (reemplaza con tu URL correcta)
-            const apiUrl = 'https://joyeria-2023-eebf0fde91ee.herokuapp.com/api/productos';
-        
-            // Obtén el contenedor de productos
-            const productosContainer = document.getElementById('productos-container');
-        
-            // Realiza una solicitud fetch para obtener los productos desde la API
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    // Itera sobre los productos y crea elementos HTML para cada uno
-                    data.forEach(producto => {
-                        // Crea un contenedor para el producto
-                        const productoDiv = document.createElement('div');
-                        productoDiv.classList.add('col', 'card_container', 'product-item');
-                        productoDiv.setAttribute('category', producto.Categoria);
-        
-                        // Estructura del producto
-                        productoDiv.innerHTML = `
-                            <div class="card">
-                                <img src="${producto.Imagen}" class="card-img-top" alt="${producto.Nombre}">
-                                <div class="card-body">
-                                    <h5 class="card-title">${producto.Nombre}</h5>
-                                    <p class="card-text">${producto.Descripcion}</p>
-                                </div>
-                                <div class="mb-5 d-flex justify-content-around">
-                                    <h3>$${producto.Precio.toFixed(2)}</h3>
-                                    <button class="btn_producto">Comprar</button>
-                                </div>
-                            </div>
-                        `;
-        
-                        // Agrega el producto al contenedor
-                        productosContainer.appendChild(productoDiv);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error al obtener los productos:', error);
-                });
-        });
-        </script>   
 
-    <script src="js/JS/jquery-3.2.1.js"></script>
-    <script src="js/JS/script.js"></script>
-    <script src="js/barrabusq.js"></script>
+    <script src="js/productos.js"></script>
 </body>
 
 </html>
+
