@@ -16,7 +16,7 @@ export const getProductos = async (req, res) => {
     }
 }
 
-// Obtener un producto por ID
+// Obtener un producto por ID   
 export const getProducto = async (req, res) => {
     try {
         const [rows] = await pool.query('SELECT * FROM Productos WHERE ID = ?', [req.params.id]);
