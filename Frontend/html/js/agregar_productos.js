@@ -1,84 +1,57 @@
-  function calcularPrecioTotal(carrito) {
-    let precioTotal = 0;
-    carrito.forEach(producto => {
-      precioTotal += producto.precio;
+// TODO EL CODIGO COMENTADO ES BACKEND
+// const mysql = require('mysql');
+
+// // Configura los detalles de la conexión a la base de datos
+// const connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   database: ' bylanpdxjlmrw2ixoud8'
+// });
+
+// // Conécta a la base de datos
+// connection.connect((err) => {
+//   if (err) {
+//     console.error('Error al conectar a la base de datos: ' + err.stack);
+//     return;
+//   }
+//   console.log('Conexión exitosa a la base de datos con el ID ' + connection.threadId);
+
+//   // Ejemplo
+//   connection.query('SELECT * FROM Productos', (error, results, fields) => {
+//     if (error) throw error;
+
+//     // Resultados de la consulta
+//     console.log('Productos:', results);
+//   });
+
+//   // Cierra la conexión después de realizar las consultas necesarias
+//   connection.end((err) => {
+//     if (err) {
+//       console.error('Error al cerrar la conexión: ' + err.stack);
+//       return;
+//     }
+//     console.log('Conexión cerrada.');
+//   });
+// });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para agregar productos al carrito
+    function agregarProductoAlCarro(idProducto, nombreProducto, precioProducto) {
+        // Lógica para agregar productos al carro (aquí puedes realizar operaciones con la base de datos)
+        console.log('Producto agregado al carro - ID:', idProducto, ', Nombre:', nombreProducto, ', Precio:', precioProducto);
+    }
+
+    // Agregar evento de clic a los botones dentro de los elementos
+    document.querySelectorAll('.contenido button').forEach(function (button) {
+        button.addEventListener('click', function () {
+            // Obtener información del producto desde el contenedor
+            var contenedorProducto = this.parentNode;
+            var idProducto = contenedorProducto.dataset.id; // Suponiendo que el ID del producto esté almacenado en un atributo de datos
+            var nombreProducto = contenedorProducto.querySelector('h3').textContent;
+            var precioProducto = parseFloat(contenedorProducto.querySelector('.precio').textContent.replace('$', ''));
+
+            // Llamar a la función para agregar el producto al carrito
+            agregarProductoAlCarro(idProducto, nombreProducto, precioProducto);
+        });
     });
-    return precioTotal;
-  }
-
-  function agregarAlCarrito(nombreProducto, precioProducto, imagenProducto, descripcionProducto) {
-    // Verifica si ya hay productos en el carrito en localStorage
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    // Agrega el nuevo producto al carrito
-    carrito.push({
-      nombre: nombreProducto,
-      precio: precioProducto,
-      imagen: imagenProducto,
-      descripcion: descripcionProducto
-    });
-
-    // Ordena los productos por nombre de forma ascendente
-    carrito.sort((a, b) => (a.nombre > b.nombre) ? 1 : -1);
-
-    // Actualiza el carrito en localStorage
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    // Muestra un mensaje de éxito (esto es opcional, puedes personalizarlo)
-    alert("Producto agregado al carrito!");
-
-    // Redirige al usuario a la página del carrito
-    window.location.href = "carrito.html";
-  }
-
-  document.addEventListener("DOMContentLoaded", function() {
-    // Obtiene los productos del carrito desde localStorage
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    // Obtiene el contenedor donde se mostrarán los productos en el carrito
-    let carritoContainer = document.querySelector(".prod-carrito");
-
-    // Recorre los productos del carrito y los muestra en la página
-    carrito.forEach(producto => {
-      // Crea elementos HTML para mostrar el producto
-      let productoDiv = document.createElement("div");
-      productoDiv.classList.add("prod-carrito", "row", "mt-4");
-
-      // Estructura del producto
-      productoDiv.innerHTML = `
-        <div class="col-3 my-3">
-          <img class="img-fluid" src="${producto.imagen}" alt="${producto.nombre}">
-        </div>
-        <div class="col-8">
-          <div class="row mt-3">
-            <h4>${producto.nombre}</h4>
-          </div>
-          <div class="row">
-            <p>${producto.descripcion}</p>
-          </div>
-          <div class="col-4 my-auto precio-prod">
-            <p>$${producto.precio.toFixed(2)}</p>
-          </div>
-        </div>
-      `;
-
-      // Agrega el producto al contenedor del carrito
-      carritoContainer.appendChild(productoDiv);
-    });
-
-    // Calcula y muestra el precio total del carrito
-    let precioTotal = calcularPrecioTotal(carrito);
-    let precioTotalContainer = document.querySelector(".precio-total");
-    precioTotalContainer.textContent = `$${precioTotal.toFixed(2)}`;
-
-    let continuarComprandoBtn = document.getElementById("continuar-comprando");
-
-    // Agrega un evento de clic al botón
-    continuarComprandoBtn.addEventListener("click", function(event) {
-      // Evita que el enlace se abra (comportamiento predeterminado)
-      event.preventDefault();
-
-      // Llama a la función agregarAlCarrito utilizando los datos del producto seleccionado
-      agregarAlCarrito(productoSeleccionado.nombre, productoSeleccionado.precio, productoSeleccionado.imagen, productoSeleccionado.descripcion);
-    });
-  });
+});
