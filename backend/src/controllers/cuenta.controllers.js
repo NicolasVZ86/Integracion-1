@@ -24,11 +24,7 @@ export const loginController = async (req, res) => {
             throw { status: 401, message: 'Credenciales invalidas' }
         }
 
-        // const isValidPassword = await comparePassword(Contraseña, user.Contraseña)
 
-        // if (!isValidPassword) {
-        //     throw { status: 401, message: 'Invalid credentials' }
-        // }
 
         const payload = {
             uid: user.ID,
