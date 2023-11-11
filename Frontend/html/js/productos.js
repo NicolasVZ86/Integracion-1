@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (!response.ok) {
                 throw new Error('La solicitud no fue exitosa');
             }
-
             productosGlobal = await response.json();
             // Renderizamos los productos inicialmente
             renderizarProductos(productosGlobal);
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.error('Error al cargar los productos:', error);
         }
     };
-
     const filtrarProductos = () => {
         const textoBusqueda = document.getElementById('barraBusqueda').value.toLowerCase();
         // Utilizamos la variable global de productos para el filtro
@@ -52,7 +50,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         e.preventDefault(); 
         filtrarProductos();
     });
-    document.getElementById('barraBusqueda').addEventListener('input', filtrarProductos);
 
-    cargarProductos();
+  cargarProductos();
 });
