@@ -35,10 +35,10 @@ export const getProducto = async (req, res) => {
 export const createProducto = async (req, res) => {
     try {
         const {
-            Nombre, Descripcion, Precio, PorcentajeDescuento, Almacenamiento,Categoria
+            Nombre, Descripcion, Precio, PorcentajeDescuento, Almacenamiento,Categoria,Imagen
         } = req.body
         const query = `
-            INSERT INTO Productos (Nombre, Descripcion, Precio, PorcentajeDescuento, Almacenamiento, Categoria) VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO Productos (Nombre, Descripcion, Precio, PorcentajeDescuento, Almacenamiento, Categoria, Imagen) VALUES (?, ?, ?, ?, ?, ?, ?)
         `
         const [rows] = await pool.query(
             query,
