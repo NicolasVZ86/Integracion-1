@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +6,7 @@
     <title>Tienda de Joyas con Precios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Frontend/html/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
@@ -22,7 +21,6 @@
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                         aria-labelledby="offcanvasNavbarLabel">
                         <div class="offcanvas-header menu_header">
@@ -47,7 +45,7 @@
                                         <li><a class="dropdown-item category_item" category="collares"
                                                 href="#">Collares</a></li>
                                         <!-- Agrega el siguiente elemento para redirigir a la página principal -->
-                                        <li><a class="dropdown-item" href="./index.html">Inicio</a></li>
+                                        <li><a class="dropdown-item" href="index.html">Inicio</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -59,198 +57,17 @@
                                 aria-label="Search" id="barraBusqueda">
                             <button class="btn btn-primary" id="buscarBtn">Buscar</button>
                         </div>
-                        <a class="btn btn-primary" href="/Frontend/html/index.html">Inicio</a>
                         <a href="carrito.html">
                             <i class="bi bi-cart-fill carro" style="color: black;"></i>
                         </a>
                     </form>
                 </div>
             </nav>
-            <div class="container py-5 mt-5">
-                <h1 class="text-center">Productos</h1>
-                <div class="row row-cols-1 row-cols-md-4 g-4 py-5 products-list">
+            <div class="row row-cols-1 row-cols-md-4 g-4 py-5 products-list" id="productos-container">
+                <!-- Aquí se agregan los productos -->
 
-                    <div class="col card_container product-item" category="anillos">
-                        <div class="card">
-                            <img src="img/images/productos/Anillo_de_Diamantes.png" id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Anillo de Diamantes</h5>
-                                <p class="card-text">Anillo de diamantes exquisitamente diseñado. Material: Oro blanco
-                                    18K.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$10,500</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col product-item" category="anillos">
-                        <div class="card">
-                            <img src="img/images/productos/Anillo_de_Zafiro.png" id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Anillo de Zafiro</h5>
-                                <p class="card-text">Anillo de zafiro azul con incrustaciones de diamantes. Material:
-                                    Platino.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$11,200</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col product-item" category="anillos">
-                        <div class="card">
-                            <img src="img/images/productos/Anillo_de_Diamantes.png" id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Anillo de Diamantes</h5>
-                                <p class="card-text">Anillo de diamantes exquisitamente diseñado. Material: Oro blanco
-                                    18K.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$10,500</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col product-item" category="anillos">
-                        <div class="card">
-                            <img src="img/images/productos/Anillo_de_Zafiro.png" id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Anillo de Zafiro</h5>
-                                <p class="card-text">Anillo de zafiro azul con incrustaciones de diamantes. Material:
-                                    Platino.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$11,200</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col product-item" category="anillos">
-                        <div class="card">
-                            <img src="img/images/productos/Anillo_de_Oro_Rosa.png" id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Anillo de Oro Rosa</h5>
-                                <p class="card-text">Elegante anillo de oro rosa con detalles en diamantes. Material:
-                                    Oro rosa 14K.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$10,800</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col product-item" category="anillos">
-                        <div class="card">
-                            <img src="img/images/productos/Anillo_de_Perlas.png" id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Anillo de Perlas</h5>
-                                <p class="card-text">Anillo elegante de perlas cultivadas con diamantes. Material: Oro
-                                    blanco 18K.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$10,750</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col product-item" category="anillos">
-                        <div class="card">
-                            <img src="img/images/productos/Anillo_de_Rubí.png"  id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Anillo de Rubí</h5>
-                                <p class="card-text">Anillo con un hermoso rubí central rodeado de diamantes. Material:
-                                    Oro amarillo 14K.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$11,100</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col product-item" category="aros">
-                        <div class="card">
-                            <img src="img/images/productos/Aros_de_Oro_Blanco.png" id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Aros de Oro Blanco</h5>
-                                <p class="card-text">Elegantes aros de oro blanco con diamantes incrustados. Material:
-                                    Oro blanco 18K.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$10,950</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col product-item" category="aros">
-                        <div class="card">
-                            <img src="img/images/productos/Aros_de_Oro_Rosa.png" id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Aros de Oro Rosa</h5>
-                                <p class="card-text">Aros de oro rosa con diseño elegante y piedras preciosas. Material:
-                                    Oro rosa 14K.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$11,450</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col product-item" category="aros">
-                        <div class="card">
-                            <img src="img/images/productos/Aros_de_Diamantes.png" id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Aros de Diamantes</h5>
-                                <p class="card-text">Aros de diamantes brillantes y elegantes. Material: Platino.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$12,000</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col product-item" category="collares">
-                        <div class="card">
-                            <img src="img/images/productos/Collar_de_Diamantes.png" id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Collar de Diamantes</h5>
-                                <p class="card-text">Collar deslumbrante con diamantes incrustados. Material: Oro blanco
-                                    18K.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$10,700</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col product-item" category="collares">
-                        <div class="card">
-                            <img src="img/images/productos/Collar_de_Perlas.png" id="imagenProducto" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Collar de Perlas</h5>
-                                <p class="card-text">Collar elegante de perlas cultivadas. Material: Oro blanco 18K.</p>
-                            </div>
-                            <div class="mb-5 d-flex justify-content-around">
-                                <h3>$10,250</h3>
-                                <button class="btn_producto">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
     <footer class="p-3">
         <div class="container text-center footer">
             <nav class="d-flex justify-content-evenly social">
@@ -273,10 +90,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
         </script>
 
-    <script src="../js/JS/jquery-3.2.1.js"></script>
-    <script src="../js/JS/script.js"></script>
-    <script src="../js/barrabusq.js"></script>
-    <script src="../html/js/act_imagenes.js"></script>
+    <script src="js/productos.js"></script>
 </body>
 
 </html>
