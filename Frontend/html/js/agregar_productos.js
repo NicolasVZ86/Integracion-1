@@ -27,7 +27,7 @@ export const getCarrito = () => {
     return carrito;
 };
 // Función para renderizar productos en la página
-export const renderizarProductos = (productos) => {
+const renderizarProductos = (productos) => {
     const productosContainer = document.getElementById('productos-container');
     productosContainer.innerHTML = '';
     productos.forEach(producto => {
@@ -36,7 +36,7 @@ export const renderizarProductos = (productos) => {
         productoDiv.setAttribute('category', producto.Categoria);
         productoDiv.innerHTML = `
             <div class="card ${producto.Categoria}"> 
-                <img src="${producto.Imagen}" class="card-img-top" alt="${producto.Nombre}">
+            <div class="card-header"><img src="${producto.Imagen}" class="card-img-top" alt="${producto.Nombre}"></div>
                 <div class="card-body">
                     <h5 class="card-title">${producto.Nombre}</h5>
                     <p class="card-text">${producto.Descripcion}</p>
