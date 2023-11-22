@@ -57,33 +57,38 @@
     </nav>
     <section>
 
-
-        <div class="container mt-4">
+        
+        <div class="container mt-5 custom-container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-md-8">
+                    <h3 class="mt-3">Productos</h3>
+                    <div class="carrito-contenido" id="carrito-contenido"></div>
+                </div>
+                <div class="col-md-4">
                     <h3 class="mt-3">Total</h3>
+                    <div class="row mt-2">
+                        <div class="col-8 fs-6">Precio total de los productos sin descuento:</div>
+                        <div class="rounded-4 col-4 bg-white">
+                            <span id="total-sin-descuento"></span>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-8 fs-6">Precio total de los productos con descuento:</div>
+                        <div class="rounded-4 col-4 bg-white">
+                            <span id="total-con-descuento"></span>
+                        </div>
+                    </div>
+        
+                    <div class="row mt-2">
+                        <a href="productos.html" class="btn btn-primary btn-lg rounded-5">Sigue explorando productos</a>
+                    </div>
+                    <div class="row mt-1 mb-1">
+                        <a href="pagina de pago" class="btn btn-primary btn-lg rounded-5">Pagar</a>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-2">
-                <div class="col-8 fs-6">Precio total de los productos sin descuento:</div>
-                <div class="rounded-4 col-4">
-                    <span id="total-sin-descuento"></span>
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col-8 fs-6">Precio total de los productos con descuento:</div>
-                <div class="rounded-4 col-4">
-                    <span id="total-con-descuento"></span>
-                </div>
-            </div>
-            <div class="row mt-2">
-                <a href="productos.html" class="btn btn-primary btn-lg rounded-5">Sigue explorando productos</a>
-            </div>
-            <div class="row mt-1 mb-1">
-                <a href="pagina de pago" class="btn btn-primary btn-lg rounded-5">Pagar</a>
-            </div>
-            <div class="carrito-contenido" id="carrito-contenido"></div>
         </div>
+        
     </section>
     <footer class="p-3">
         <div class="container text-center footer">
