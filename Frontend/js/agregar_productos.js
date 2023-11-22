@@ -99,18 +99,22 @@ function mostrarContenidoCarrito(carrito) {
 
     carrito.forEach(producto => {
       var productoHTML = `
-          <article class="col">
-            <div class="card">
-              <div class="card-body">
+      <article class="col">
+        <div class="card">
+          <div class="card-body">
+            <div class="contenido-producto">
+              <div class="info-producto">
                 <h5 class="card-title">${producto.Nombre}</h5>
                 <p class="card-text">${producto.Descripcion}</p>
                 <p class="card-text">Precio: $${(producto.Precio * producto.Cantidad).toFixed(2)}</p>
                 <p class="card-text">Cantidad: ${producto.Cantidad}</p>
-                <img src="${producto.Imagen}" class="card-img-top">
                 <button class="btn_eliminar_producto" data-id="${producto.ID}">Eliminar del carrito</button>
               </div>
+              <img src="${producto.Imagen}" class="card-img-top imagen-carrito">
             </div>
-          </article>`;
+          </div>
+        </div>
+      </article>`;    
       carritoContenido.append(productoHTML);
       console.log('Producto agregado al DOM:', productoHTML);
     });
@@ -154,6 +158,5 @@ function mostrarContenidoCarrito(carrito) {
     }
   }
 
-  // Asegurar que la actualización del carrito se realice después de que el DOM esté completamente cargado
   actualizarTotal(obtenerCarrito());
 });
