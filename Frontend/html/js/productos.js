@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                                 </div>
                                 <div class="mb-5 d-flex justify-content-around">
                                     <h3>$${producto.Precio.toFixed(2)}</h3>
-                                    <button class="btn_producto">Comprar</button>
+                                    <button class="btn-agregar">Agregar al carrito</button>
                                 </div>
                             </div>
                         `;
