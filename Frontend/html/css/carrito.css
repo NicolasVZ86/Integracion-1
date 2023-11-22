@@ -22,16 +22,21 @@ body {
 .prod-carrito {
     height: 20vh;
     background: var(--first-color);
+    margin-top: 20px; /* Ajusta el valor según tus necesidades */
 }
 
-.pago-carrito {
-    height: 60vh;
-    background: var(--first-color);
+
+.bg-white {
+    background-color: white;
+    padding: 10px; 
+    border-radius: 5px; /* bordes redondeados */
+}
+.producto-precio {
+    background-color: white;
+    padding: 5px; /* Puedes ajustar el relleno según tus preferencias */
+    border-radius: 5px; /* Puedes agregar bordes redondeados */
 }
 
-.precio-prod {
-    align-self: flex-end;
-}
 
 /* ************** Modificaciones Bootstrap ************** */
 .border {
@@ -42,6 +47,22 @@ body {
     margin-top: 0;
     margin-right: 0;
     margin-left: 0;
+}
+.imagen-carrito {
+    max-width: 280px; /* Puedes ajustar el tamaño según tus necesidades */
+    max-height: 280px;
+  }
+.contenido-producto {
+    display: flex;
+    justify-content: space-between;
+  }  
+.carrito-contenido {
+    margin-top: 80px; /* Ajusta el valor según tus necesidades */
+}
+.custom-container {
+    background-color: rgba(173, 216, 230, 0.7);/* Reemplaza #yourColor con el color que desees */
+    padding: 20px; /* Ajusta el relleno según tus preferencias */
+    border-radius: 10px; /* Ajusta los bordes redondeados según tus preferencias */
 }
 
 /* // X-Small devices (portrait phones, less than 576px)
