@@ -22,16 +22,21 @@ body {
 .prod-carrito {
     height: 20vh;
     background: var(--first-color);
+    margin-top: 20px; 
 }
 
-.pago-carrito {
-    height: 60vh;
-    background: var(--first-color);
+
+.bg-white {
+    background-color: white;
+    padding: 10px; 
+    border-radius: 5px;
+}
+.producto-precio {
+    background-color: white;
+    padding: 5px; 
+    border-radius: 5px;
 }
 
-.precio-prod {
-    align-self: flex-end;
-}
 
 /* ************** Modificaciones Bootstrap ************** */
 .border {
@@ -43,31 +48,22 @@ body {
     margin-right: 0;
     margin-left: 0;
 }
-.prod-carrito-item {
+.imagen-carrito {
+    max-width: 280px; 
+    max-height: 280px;
+  }
+.contenido-producto {
     display: flex;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
+    justify-content: space-between;
+  }  
+.carrito-contenido {
+    margin-top: 80px;
 }
-
-.producto-img {
-    flex: 0 0 30%; /* Establece el ancho de la imagen al 30% del contenedor */
-    margin-right: 20px;
+.custom-container {
+    background-color: rgba(173, 216, 230, 0.7);
+    padding: 20px; 
+    border-radius: 10px; 
 }
-
-.producto-img img {
-    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
-    max-width: 100px; /* Establece el ancho máximo de la imagen a 100px (ajústalo según tus necesidades) */
-    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
-}
-
-
-.producto-info {
-    flex: 1; /* El resto del espacio disponible se utiliza para la información del producto */
-}
-
-/* Estilos adicionales según sea necesario */
-
 
 /* // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap */
