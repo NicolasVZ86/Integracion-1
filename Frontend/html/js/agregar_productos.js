@@ -22,10 +22,6 @@ const agregarProductoAlCarro = (idProducto, nombreProducto, precioProducto) => {
     console.log('Contenido del carrito:', carrito);
 };
 
-export const getCarrito = () => {
-    console.log(carrito);
-    return carrito;
-};
 // Función para renderizar productos en la página
 const renderizarProductos = (productos) => {
     const productosContainer = document.getElementById('productos-container');
@@ -36,15 +32,16 @@ const renderizarProductos = (productos) => {
         productoDiv.setAttribute('category', producto.Categoria);
         productoDiv.innerHTML = `
             <div class="card ${producto.Categoria}"> 
-            <div class="card-header"><img src="${producto.Imagen}" class="card-img-top" alt="${producto.Nombre}"></div>
-                <div class="card-body">
-                    <h5 class="card-title">${producto.Nombre}</h5>
-                    <p class="card-text">${producto.Descripcion}</p>
-                </div>
-                <div class="mb-5 d-flex justify-content-around">
-                    <h3>$${producto.Precio.toFixed(2)}</h3>
+                <div class="card-header"><img src="${producto.Imagen}" class="card-img-top" alt="${producto.Nombre}"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">${producto.Nombre}</h5>
+                        <p class="card-text">${producto.Descripcion}</p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3>$${producto.Precio}</h3>
+                    </div>
                     <button class="btn-agregar">Agregar al carrito</button>
-                </div>
+
             </div>
         `;
         const btnComprar = productoDiv.querySelector('.btn-agregar');
