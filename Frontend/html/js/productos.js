@@ -16,9 +16,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
                                     <p class="card-text">${producto.Descripcion}</p>
                                 </div>
                                 <div class="mb-5 d-flex justify-content-around">
-                                    <h3>$${producto.Precio.toFixed(2)}</h3>
-                                    <button class="btn_producto">agregar al carrito</button>
-                                </div>
+                                <h3>$${producto.Precio}</h3>
+                            </div>
+                            <button class="btn_producto">Agregar al carrito</button>
+        
                             </div>
                         `;
                         productosContainer.appendChild(productoDiv);

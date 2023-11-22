@@ -67,7 +67,7 @@ button:hover {
   background-color: rgba(70, 131, 180, 0.4);
 }
 
-.btn-agregar {
+.btn_producto {
   background-color: rgb(48, 116, 127);
   border: 2px solid rgb(48, 116, 127);
   color: white;
